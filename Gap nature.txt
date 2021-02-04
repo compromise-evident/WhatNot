@@ -1,0 +1,25 @@
+/*  The case for the infinity of primes who differ by every even number
+
+Prerequisite documentation: the sieve of Eratosthenes and Wheel factorization.
+
+    Zero being even, its inclusion is not problematic. Prime q
+differs from q by zero. Euclid's proof of the infinity of primes means
+the infinity of prime gaps of zero just as (p sub 1) - 2 = 0.
+    Consider the Wheel factorization of 30 on the number line. At the
+start of the line, primes 2, 3, and 5 reside in their naturally separated
+positions and are visible with interval 1 through 5 in consideration. On
+the other hand, 30 being the product of all primes <= 5 means 30 is a
+multiple of those primes therefore 2, 3, and 5 reside within position 30
+in simultaneity.
+    Allow this wheel to repeat itself along the line of infinity and
+suppose you wish to mark off all the multiples of some large prime of
+your choice--in addition to the marks left by 2, 3, and 5. Every once in
+a while, the efforts of the Wheel factorization of 30 will encounter
+helpful interference, however, due to the gap nature of this wheel--twin,
+cousin, and sexy primes persist while not affected by the large prime.
+    Now consider the inclusion of yet another unique prime of your choice.
+There will be positions on the line where the two external primes meet,
+and where they are most apart. And in the absence of such interference,
+the wheel continues to leave its mark hence the persistence of gap nature.
+
+Ukraine 2020 */
