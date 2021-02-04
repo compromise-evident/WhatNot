@@ -1,0 +1,28 @@
+/*              Dimension equivalence through combinatorics
+
+
+
+    n/d_1 ... n/d_2 ... n/d_3 ... n/d_4 ... n/d_5 ... n/d_6 ... n/d_7 ...
+
+  Suppose d_2 is the number of possible images or pixel combinations for some
+file size where d_2 represents the denominator of the second dimension--where
+images exist. d_2 is calculated by taking the number of possible pixel states
+and raising it to the power of total pixels.  From there, we can easily morph
+into the first dimension by sharing our numerator value. This is no different
+than passing our current state of the universe. And the first dimension being
+a single spatial point on the number line, its new values may fluctuate as we
+continue passing the states of our simulation within our flat image-universe.
+  Now let's morph into a higher dimension from the second. We can perform the
+same operation and pass along our numerator, and the only thing changing will
+be the denominators  who grow in size to help store additional aspects of the
+same universe.  As you observe higher and higher dimensions, you will see the
+same 3D cube of the same size embedded  within all dimensions three or higher
+where spatial entities are simulated, however, the sub-regions on top of that
+represent the current state of aspects and principles of that simulation. Any
+visual representation of d_3 may appear chaotic,  fluctuating dramatically as
+smooth changes take place in d_2, however, d_3 is allowed to exist--as random
+as it may look. Simulating only d_3 from that point is like simulating a mess
+of energy on Earth where the particles settle down and gain order.  It is now
+that smooth simulation of this order translates into chaotic fluctuations for
+d_2 and any other dimension. Like the strange illusions of time and distance,
+dimensions can be data structures--each capable of absorbing the same value.*/
