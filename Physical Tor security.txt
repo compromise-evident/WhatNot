@@ -1,0 +1,73 @@
+/*   Booting into the heads live operating system which sends all traffic through
+Tor by default. heads comes with basic tools including the Tor browser which gives
+you secure and anonymous access to the internet as well as the unfiltered internet
+(dark web.) heads provides a temporary computer session without leaving a trace.
+heads contains a fully de-blobbed kernel hardened with grsecurity. This systemd-free
+Devuan derivative is completely libre and free as in freedom. 32/64, ships with links.
+
+
+Making heads for Windows users:
+	1. Insert spare flash drive.
+	2. Download heads from heads.dyne.org then
+	   download LiLi (Linux Live USB Creator.)
+	3. Use LiLi to format the flash drive with input:
+	   heads download, and output: flash drive.
+
+Making heads for Linux users (root):
+	lsblk
+	dd if=/home/nikolay/Downloads/heads-0.4-i386-live.iso of=/dev/sdb
+	
+	(The lsblk command stands for list block, it lists available drives and
+	their partitions in a branching format. "sda" is usually the main drive,
+	look for the name corresponding to the flash drive or its size. For example:
+	"sdb 16GB storage." "sdb" would be the destination name unless it's your
+	internal secondary drive. In that case, the USB would show up as "sdc."
+	Do not format sda unless you know what you're doing! And of course,
+	replace the example user name "nikolay" with the user name on your machine.)
+
+Using heads:
+	Warning: avoid computers with connected USB drives and physical
+	key loggers (USB device interjecting keyboard & computer usually
+	at rear ports.) Do not bring smartphones/connective/logging devices.
+	Public computer monitoring may get red flags when machines go offline.
+	
+	1. Insert flash drive with the computer off.
+	   (This prevents virus contraction, however, the flash drive ID, details,
+	   and insert time is logged and sent to the on-board storage device even if
+	   you only entered the boot menu! If the on-board storage device is encrypted,
+	   the logs are later applied to that drive's OS once decrypted by the owner.)
+	2. Power it on and press the F12 key until boot menu appears.
+	   (Keyboard key for boot menu appears at startup and is usually F12.)
+	3. Use arrow keys to select the flash drive and press enter.
+	   (Flash drive should show up as "Sandisk Ultra 16GB" for example.)
+
+Other information:
+	* Your session is contained within the system RAM, pull the power plug in emergencies.
+	* Use a VPN to mask the fact that you're using Tor and for added security. Avoid VPNs
+	  operated by news groups and those producing side applications other than VPN systems.
+	* An extra precaution is to compare a hash of your heads download with the heads hash displayed
+	  on the heads website. A hash mismatch means you did not receive the intended file, discard it.
+	* Modern flash and SSD devices come with more memory than is displayed and when written to, do not
+	  immediately overwrite data marked for deletion. This increases device life-span while undermining
+	  security. “Encrypt & replace file” does not explicitly mean the unencrypted version is overwritten
+	  when you completely flood device memory. Encrypt device format beforehand or encrypt data on a
+	  separate device whose memory can be demolished effectively without the chance of reverse and recovery.
+	* Once the Tor browser is opened, you can search for links to the dark web. These links can only be
+	  processed using the Tor browser. A less secure layer of the internet called the deep web consists
+	  of regular web pages that have not been indexed--those pages do not show up in search engines.
+	* If there's a hold-up on package delivery for example, you are not to pick it up in person.
+	  The package is a loss if illegal.
+
+
+Hidden Wiki           : http://zqktlwi4fecvo6ri.onion
+Uncensored Hidden Wiki: http://gxamjbnu7uknahng.onion
+Wikileaks             : http://wlupld3ptjvsgwqw.onion
+2f30.org Live Radio   : http://2f3oy4vebxqkqu52.onion/live.ogg
+Volatile Git (Gogs)   : http://git.vola7ileiax4ueow.onion
+heads Website         : http://fz474h2o46o2u7xj.onion
+Systemli Etherpad     : http://j7652k4sod2azfu6.onion
+Riseup.net            : http://nzh3fv6jc6jskki3.onion
+OnionMail             : http://en.louhlbgyupgktsw7.onion/directory.html
+Cryptome              : http://h2am5w5ufhvdifrs.onion
+SecureDrop            : http://secrdrop5wyphb5x.onion
+*/
