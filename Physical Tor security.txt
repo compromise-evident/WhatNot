@@ -13,7 +13,7 @@ Making heads for Windows users:
 	3. Use LiLi to format the flash drive with input:
 	   heads download, and output: flash drive.
 
-Making heads for Linux users (root):
+Making heads for GNU+Linux users (root):
 	lsblk
 	dd if=/home/nikolay/Downloads/heads-0.4-i386-live.iso of=/dev/sdb
 	
