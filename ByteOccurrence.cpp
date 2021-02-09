@@ -54,7 +54,7 @@ int main()
 	{	if(distribution[a] < minimum) {minimum = distribution[a];}
 		if(distribution[a] > maximum) {maximum = distribution[a];}
 	}
-	cout << (total_bytes / distinct_bytes) << "\t average of distinct,\n"
+	cout << (total_bytes / distinct_bytes) << "\t average of present,\n"
 	     << minimum << "\t minimum of all,\n"
 	     << maximum << "\t maximum of all.";
 }
