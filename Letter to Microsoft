@@ -1,0 +1,39 @@
+Dear Microsoft, XMimikatz.
+
+Remember WDigest & Mimikatz? Afraid for your clients?
+You need exposure-independent and symmetry-independent authentication--
+Authorship: without rolling-codes, EVERYTHING already given to the verifying
+party, and EVERYTHING the verifying party contains, can be safely exposed raw
+forever. And EVERYTHING withheld from the verifying party can be withheld
+indefinitely, increase in size and quantity forever, and is always new for
+every authentication event.
+
+
+
+
+14. EXPOSURE-INDEPENDENT AUTHENTICATION (typically, authentication--rolling-code
+    or not--relies on shared secrets;  employers allow you to open a door if and
+    only if that door accepts your ID or secret  string  of characters--matching
+    what the door already expects to see. The door is aware of a secret and must
+    never expose it.  But if instead the door contained your  Authorship  number
+    which only you modify,that ever-changing number can be displayed on the door
+    and even made public. EVERYTHING you gave the door,  and EVERYTHING the door
+    contains, can be  safely  made public raw.  And thanks to  super-flexibility
+    of Authorship, those things can be safely made public raw, forever.)
+15. SYMMETRY-INDEPENDENT AUTHENTICATION  (feature 14;  verifying parties are not
+    and need not be aware of what any  Authorship number  should look like after
+    modification.  In  fact,  no one knows;  numbers are not  predetermined  but
+    generated upon  modification.  They can be  any string,  but preferably that
+    which Authorship gives you. The  essence  of Authorship is what emerges from
+    the  presence  and  absence  of keys.  Verifying parties  simply  check that
+    modification makes sense  mathematically.  They are given every function but
+    not every key; modifying parties  indefinitely  withhold all-new secrets for
+    each event. And thanks to super-flexibility of Authorship, those secrets can
+    increase in size and quantity forever.)
+16. ENCRYPTION-TYPE-INDEPENDENT  AUTHENTICATION  (feature  15;  the  essence  of
+    Authorship is a  clever  assembly  of  encrypted  items.  Those items can be
+    anything  of  difficulty,  including  riddles,  encrypted  files,  and  even
+    philosophical puzzles. A deeper essence of  Authorship  is what emerges when
+    solutions are withheld,  selectively.  No matter the encrypted item type, it
+    stands alone to serve as something solved or unsolved (2 actions.)Authorship
+    does not depend on item particularities in order to assemble those items.)
