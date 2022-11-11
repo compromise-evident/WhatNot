@@ -444,7 +444,7 @@ requires header   (create folders elsewhere)-                   mkdir("//home//n
 Here, most double-slashes are unnecessary, but may be used to help auditors recognize activity outside of normal locations!
 
 REMOVING:
-remove("file_name");              //as actual file. Add path as above if in filder.
+remove("file_name");              //as actual file. Add path as above if in folder.
 remove(file_name);                //as variable for file (char array.)
 system("rm -r /path_to_FOLDER");  //as directory.
 
