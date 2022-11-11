@@ -458,6 +458,9 @@ AS VARIABLE:
 char groupOTP[100] = {"wget -q https://github.com/compromise-evident/groupOTP/archive/refs/heads/main.zip"};
 system(groupOTP);
 
+RUN ANOTHER C++ PROGRAM:
+system("/home/user/Desktop/Authorship");   //That Authorship file is the executable made by Geany or with the g++ command.
+
 //Basically, any bash commands will work in C++ if wrapped in system("");  See ss64.com/bash/
 */
 
