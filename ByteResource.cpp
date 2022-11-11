@@ -454,6 +454,10 @@ system("wget -q https://github.com/compromise-evident/Authorship/archive/refs/he
 DECOMPRESS:
 system("unzip -qq main.zip");
 
+AS VARIABLE:
+char groupOTP[100] = {"wget -q https://github.com/compromise-evident/groupOTP/archive/refs/heads/main.zip"};
+system(groupOTP);
+
 //Basically, any bash commands will work in C++ if wrapped in system("");  See ss64.com/bash/
 */
 
