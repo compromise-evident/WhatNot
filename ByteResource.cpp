@@ -442,6 +442,19 @@ requires header   (create folders within folders)-              mkdir("./keys/in
 requires header   (create folders elsewhere)-                   mkdir("//home//nikolay//Desktop//folder_1//keys", 0777);
 ---------------------------------------------------------------------------------------------------------------------------
 Here, most double-slashes are unnecessary, but may be used to help auditors recognize activity outside of normal locations!
+
+REMOVING:
+remove("file_name");              //as actual file. Add path as above if in filder.
+remove(file_name);                //as variable for file (char array.)
+system("rm -r /path_to_FOLDER");  //as directory.
+
+WEB:
+system("wget -q https://github.com/compromise-evident/Authorship/archive/refs/heads/main.zip");
+
+DECOMPRESS:
+system("unzip -qq main.zip");
+
+//Basically, any bash commands will work in C++ if wrapped in system("");  See ss64.com/bash/
 */
 
 
