@@ -30,6 +30,14 @@ char destination such as  int file_byte_normal;
 >>>>    if(file_byte_normal < 0) {file_byte_normal += 256;}
 
 
+
+
+and write-back to file:
+
+if(file_byte_normal < 128) {out_stream.put(file_byte_normal      );}
+else                       {out_stream.put(file_byte_normal - 256);}
+
+
 Now you can perform mathematical operations & modular arithmetic such as mod 256
 which returns a value 0 to 255--accounting for 256 total items--0 is item 1.  */
 
