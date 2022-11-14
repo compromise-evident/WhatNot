@@ -451,6 +451,10 @@ MKDIR WITH VARIABLE:
 #include <sys/stat.h> //For mkdir() (creating folders using variable.)
 mkdir(file_name, 0777);
 
+MKDIR WITH VARIABLE, WITHOUT INCLUDE DIRECTIVES:
+char folder_name[100] = {"mkdir Folder_1"};
+system(folder_name);
+
 REMOVING:
 remove("file_name");              //as actual file. Add path as above if in folder.
 remove(file_name);                //as variable for file (char array.)
