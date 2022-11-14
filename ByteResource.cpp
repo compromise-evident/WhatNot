@@ -448,7 +448,7 @@ out_stream.open("keys/file_1");           //File I/O in folders.
 out_stream.open("/home/nikolay/keys/a");  //File I/O in folders elsewhere.
 
 MKDIR WITH VARIABLE:
-#include <sys/stat.h> //For mkdir() (create folders using variable.)
+#include <sys/stat.h> //For mkdir() (creating folders using variable.)
 mkdir(file_name, 0777);
 
 REMOVING:
