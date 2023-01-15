@@ -1,0 +1,24 @@
+Rules
+
+* Encryption strength first.
+* Single files in core C++.
+* Everything in main().
+* No functions or OOP.
+* Original software.
+
+
+
+FAQ
+
+* Big tech companies are insecure about their methods, what makes you different?
+  Independent verification means those who excel in domains you do not--can show
+  you flaws privately, before those flaws are used by someone anonymous. Authors
+  of proprietary software are either claiming they alone excel in all domains,
+  or have malicious features implemented willingly or against their will.
+
+* Your math checks out, but what about the C++?
+  Read my minimalist five-page book: Programming for the Mathematician. Once you
+  memorize a few things, you'll quickly recognize them as you audit my programs.
+
+* Do you accept code contributions?
+  Not a single line, not a single character. Contact me if you're auditing.
