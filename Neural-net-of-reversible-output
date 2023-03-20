@@ -37,7 +37,7 @@ binary value in the previous fire[] first element could have caused a resulting
 binary value fire_2[y]?
 
 Find the location z of value 2 in the last layer and logically deduce: what
-binary value in the previous fire[] first & second elements could have caused a
+binary values in the previous fire[] first & second elements could have caused a
 resulting binary value fire_2[z]?
 
 That's a process. Moving chronologically while respecting order by corresponding
