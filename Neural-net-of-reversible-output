@@ -54,4 +54,9 @@ from the end, the output you start with can be any desired classification or
 generation. Other than that, any produced output run backwards will revert
 to the input verbatim.
 
-Last edited: Mar 20 2023 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Of interest: value is conserved, of course. Reordering is allowed but there will
+never be saturation or inadequate fire... Unless values are changed not swapped.
+Changing values means no reversion but can be used if the model is to begin with
+hyperactivity then slow down, or begin slow then get up to speed.
+
+Last edited: Mar 28 2023 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
