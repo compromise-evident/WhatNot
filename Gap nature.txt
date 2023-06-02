@@ -18,3 +18,7 @@ cousin, and sexy primes persist while not affected by the large prime.
 There will be positions on the line where the two external primes meet,
 and where they are most apart. And in the absence of such interference,
 the wheel continues to leave its mark hence the persistence of gap nature.*/
+
+
+
+note-to-self: finish the damn proof https://twitter.com/redNVR/status/1664185647459106817
