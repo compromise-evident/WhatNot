@@ -16,9 +16,5 @@ FAQ
   of proprietary software are either claiming they alone excel in all domains,
   or have malicious features implemented willingly or against their will.
 
-* Your math checks out, but what about the C++?
-  Read my C++ guide: github.com/compromise-evident/hello/blob/main/hello.cpp
-  Once you memorize a few things, you'll quickly recognize them as you audit my programs.
-
 * Do you accept code contributions?
   Not a single line, not a single character. Contact me if you're auditing.
