@@ -21,7 +21,7 @@ int main()
 	\\\\\\\\\\\\\\\\\\\\\\\                              ///////////////////////
 	\\\\\\\\\\\\\\\\\\                                        ////////////////*/
 	
-	char renaming[10000] = {"Renamed_files/00000000000000001"}; //You may add extensions. For example: Renamed_files/00000000000000000.png
+	char renaming[10000] = {"Renamed_files/00000000000000001"}; //You may add extensions. For example: Renamed_files/00000000000000001.png
 	//                                                          //All files will have that extension.
 	
 	/*////////////////                                        \\\\\\\\\\\\\\\\\\
