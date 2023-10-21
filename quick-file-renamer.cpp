@@ -1,4 +1,5 @@
-/// quick-file-renamer - makes copies and renames entire file name. You may add extensions.
+/// quick-file-renamer - makes copies and renames entire file name. You
+///                      may add extensions, and interject on line 150.
 /// Nikolay Valentinovich Repnitskiy - License: WTFPLv2+ (wtfpl.net)
 
 
@@ -142,13 +143,13 @@ int main()
 		out_stream.open(renaming);
 		in_stream.get(garbage_byte);
 		for(int b = 0; in_stream.eof() == false; b++)
-		{	/*      ______________________________________________________
-			       /                                                      \
-			      |  ÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅ  |
-			      |  ¤¤¤¤¤¤¤ modify/sniff/count garbage_byte here ¤¤¤¤¤¤¤  |
-			      |  ¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥  |
-			       \______________________________________________________/
-			*/
+		{	
+			/*####*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*######
+			##'                                         '##
+			#         modify/sniff/count/redirect         #
+			#              garbage_byte here              #
+			##,                                         ,##
+			####*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*##*/
 			
 			out_stream.put(garbage_byte);
 			in_stream.get(garbage_byte);
