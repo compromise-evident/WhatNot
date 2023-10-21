@@ -142,7 +142,15 @@ int main()
 		out_stream.open(renaming);
 		in_stream.get(garbage_byte);
 		for(int b = 0; in_stream.eof() == false; b++)
-		{	out_stream.put(garbage_byte);
+		{	/*      ______________________________________________________
+			       /                                                      \
+			      |  ÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅÅ  |
+			      |  ¤¤¤¤¤¤¤ modify/sniff/count garbage_byte here ¤¤¤¤¤¤¤  |
+			      |  ¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥  |
+			       \______________________________________________________/
+			*/
+			
+			out_stream.put(garbage_byte);
 			in_stream.get(garbage_byte);
 		}
 		in_stream.close();
