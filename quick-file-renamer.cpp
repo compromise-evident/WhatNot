@@ -142,7 +142,7 @@ int main()
 		in_stream.open(path_to_file);
 		out_stream.open(renaming);
 		in_stream.get(garbage_byte);
-		for(int b = 0; in_stream.eof() == false; b++)
+		for(; in_stream.eof() == false;)
 		{	
 			/*####*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*######
 			##'                                         '##
