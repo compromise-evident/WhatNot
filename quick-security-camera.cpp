@@ -1,5 +1,6 @@
-/// quick-security-camera - webcam auto-capture (auto-detects.) Interject with image manipulation
-///                         and shutdown-triggers (best for pre-boot encrypted.)
+/// quick-security-camera - webcam auto-capture (auto-detects.) Interject
+///                         with image manipulation and shutdown-triggers
+///                         (best for pre-boot encrypted.)
 
 
 // Just do apt install fswebcam
