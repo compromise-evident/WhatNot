@@ -1,5 +1,4 @@
-/// quick-file-renamer - makes copies and renames entire file name. You
-///                      may add extensions, and interject on line 150.
+/// quick-file-renamer - copies files and renames entire file name.
 
 
 #include <fstream>
