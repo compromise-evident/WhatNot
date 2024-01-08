@@ -1,9 +1,7 @@
-/// gitGobbler - downloads, unzips, & defolderizes GitHub repositories (to be used as training data.)
-///              Make a file "names" with 1 name per line. Example: "username/repository".
+/// gitGobbler - downloads, unzips, & de-folderizes GitHub repos.
+///              Make a file "names" with 1 name per line.
+///              Example: "username/repository".
 
-
-/*Uses wget which servers classify under crawler. For stealth use a human activity
-emulator: apt install actiona   It's a GUI tool needing no programming by def.*/
 
 #include <fstream>
 #include <iostream>
