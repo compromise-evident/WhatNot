@@ -24,9 +24,13 @@ int main()
 	\\\\\\\\\\\\\\\\\\\\\\\                              ///////////////////////
 	\\\\\\\\\\\\\\\\\\                                        ////////////////*/
 	
-	long long seconds_to_sleep_between_image_capture =        1; //Default:     1, min: 1, max: 10^18.
+	long long seconds_to_sleep_between_image_capture = 1; //Default: 1, min: 1, max: 10^18.
 	
 	long long number_of_images_to_capture = 1000000000000000000; //Default: 10^18, min: 1, max: 10^18.
+	
+	//You may edit these but don't change "a.jpg" and don't append. (Saves to folder "Images".)
+	char fswebcam_primary  [10000] = {"fswebcam -q -r 1920x1080 --no-banner Images/a.jpg"                     }; //Command for on-board webcam.
+	char fswebcam_secondary[10000] = {"fswebcam -q -r 1920x1080 --no-banner --device /dev/video2 Images/a.jpg"}; //Command for external webcam.
 	
 	/*////////////////                                        \\\\\\\\\\\\\\\\\\
 	///////////////////////                              \\\\\\\\\\\\\\\\\\\\\\\
@@ -57,21 +61,14 @@ int main()
 	bool presence_of_primary_webcam   = false;
 	bool presence_of_secondary_webcam = false;
 	
-	in_stream.open("Primary.jpg");
-	if(in_stream.fail() == false) {presence_of_primary_webcam   = true;}
-	in_stream.close();
-	
-	in_stream.open("Secondary.jpg");
-	if(in_stream.fail() == false) {presence_of_secondary_webcam = true;}
-	in_stream.close();
+	in_stream.open("Primary.jpg"  ); if(in_stream.fail() == false) {presence_of_primary_webcam   = true;} in_stream.close();
+	in_stream.open("Secondary.jpg"); if(in_stream.fail() == false) {presence_of_secondary_webcam = true;} in_stream.close();
 	
 	system("clear");
 	if(presence_of_primary_webcam   == true) {cout << "  Primary webcam : present.\n";}
 	else                                     {cout << "  Primary webcam : missing.\n";}
-	
 	if(presence_of_secondary_webcam == true) {cout << "Secondary webcam : present.\n";}
 	else                                     {cout << "Secondary webcam : missing.\n";}
-	
 	cout << "        Priority : external.\n\n";
 	
 	if((presence_of_primary_webcam == false) && (presence_of_secondary_webcam == false))
@@ -85,21 +82,17 @@ int main()
 	remove("Primary.jpg"  );
 	remove("Secondary.jpg");
 	
-	//Creates commands (you may edit these two, but do not modify the name "a.jpg".)
-	char fswebcam_primary  [10000] = {"fswebcam -q --no-banner Images/a.jpg"                     }; //..........For on-board webcam.
-	char fswebcam_secondary[10000] = {"fswebcam -q --no-banner --device /dev/video2 Images/a.jpg"}; //..........For external webcam.
-	
 	char final_command[10000];
 	for(int a = 0; a < 10000; a++)
 	{	if(presence_of_secondary_webcam == true) {final_command[a] = fswebcam_secondary[a];}
 		else                                     {final_command[a] = fswebcam_primary  [a];}
 	}
 	
-	int final_command_null_bookmark = 1;
+	int final_command_null_bookmark;
 	for(int a = 0; a < 10000; a++)
-	{	if(final_command[a] != '\0') {final_command_null_bookmark++;}
+	{	if(final_command[a] == '\0') {final_command_null_bookmark = a; break;}
 	}
-	final_command_null_bookmark -= 6;
+	final_command_null_bookmark -= 5;
 	
 	
 	
@@ -107,20 +100,17 @@ int main()
 	
 	//Begins.
 	char garbage_byte;
-	for(long long loop = 1;; loop++)
+	for(long long loop = 0; loop < number_of_images_to_capture; loop++)
 	{	system("mkdir Images -p"                    );
 		system("date"                               );
 		system("date --rfc-3339=seconds > last_time");
 		
 		in_stream.open("last_time");
 		int final_command_write_bookmark = final_command_null_bookmark;
-		
 		for(int a = 0; a < 19; a++)
 		{	in_stream.get(garbage_byte);
-			
 			if(garbage_byte == 32) {final_command[final_command_write_bookmark] = '_'         ;}
 			else                   {final_command[final_command_write_bookmark] = garbage_byte;}
-			
 			final_command_write_bookmark++;
 		}
 		in_stream.close();
@@ -129,16 +119,13 @@ int main()
 		final_command[final_command_write_bookmark + 1] = '_';
 		final_command[final_command_write_bookmark + 2] = '_';
 		final_command_write_bookmark += 3;
-		
 		system("date > last_time");
 		
 		in_stream.open("last_time");
 		for(int a = 0; a < 31; a++)
 		{	in_stream.get(garbage_byte);
-			
 			if(garbage_byte == 32) {final_command[final_command_write_bookmark] = '_'         ;}
 			else                   {final_command[final_command_write_bookmark] = garbage_byte;}
-			
 			final_command_write_bookmark++;
 		}
 		in_stream.close();
@@ -152,7 +139,7 @@ int main()
 		//Captures image.
 		system(final_command);
 		
-		if(loop == number_of_images_to_capture) {break;}
+		//Sleeps.
 		for(long long a = 0; a < seconds_to_sleep_between_image_capture; a++) {system("sleep 1");}
 	}
 }
