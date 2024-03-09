@@ -4,7 +4,7 @@ Overkillographic.cpp
 <br>
 <br>
 
-Using a screenshot tool to capture text.
+# Suspicious photo of a screenshot
 <p align="center">
   <img src="https://raw.githubusercontent.com/compromise-evident/WhatNot/main/Other/Sus_screenshot.png">
 </p>
@@ -12,6 +12,7 @@ Using a screenshot tool to capture text.
 <br>
 <br>
 
+# My little Turing test
 <p align="center">
-  <img src="https://raw.githubusercontent.com/compromise-evident/WhatNot/main/Other/USB_drive.png">
+  <img src="https://raw.githubusercontent.com/compromise-evident/WhatNot/main/Other/Bounce.png">
 </p>
