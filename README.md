@@ -12,7 +12,7 @@ Overkillographic.cpp
 <br>
 <br>
 
-# My little Turing test
+# My little Turing test (are you a robot)
 <p align="center">
   <img src="https://raw.githubusercontent.com/compromise-evident/WhatNot/main/Other/Bounce.png">
 </p>
