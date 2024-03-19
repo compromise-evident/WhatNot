@@ -1,6 +1,7 @@
 /// quick-security-camera - webcam auto-capture (auto-detects.) Interject       Run it: "apt install g++ geany". Open this in Geany. Hit F9 once. F5 to run.
 ///                         with image manipulation and shutdown-triggers
-///                         (best for pre-boot encrypted.)
+///                         (best for pre-boot encrypted.) Input can be a
+///                         smartphone via USB; use phone's webcam option.
 
 
 // Just do apt install fswebcam
