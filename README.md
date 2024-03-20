@@ -14,7 +14,7 @@ Overkillographic.cpp
 
 # My little Turing test (are you a robot)
 <p align="center">
-  <img src="https://raw.githubusercontent.com/compromise-evident/WhatNot/main/Other/Bounce.png">
+  <img src="https://raw.githubusercontent.com/compromise-evident/WhatNot/main/Other/Turing_test.png">
 </p>
 
 "A red arrow points where the black ball is headed. Against which green objects will the ball bounce until it's out of the picture?"
