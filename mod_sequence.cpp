@@ -1,3 +1,4 @@
+//Run it: "apt install g++ geany". Open this in Geany. Hit F9 once. F5 to run.
 #include <iostream>
 using namespace std;
 int main()
