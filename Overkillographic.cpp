@@ -5,10 +5,10 @@
 /*#######*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*##########
 #####'`                                                                  `'#####
 ###'                                                                        '###
-##                                                                            ##
-#,                    Have some folder ready with image(s.)                   ,#
-#'                   Image names must be .png / .jpg & so on.                 '#
-##                                                                            ##
+##                       Just do apt install imagemagick                      ##
+#,                                                                            ,#
+#'                    Have some folder ready with image(s.)                   '#
+##                   Image names must be .png / .jpg & so on.                 ##
 ###,                                                                        ,###
 #####,.                                                                  .,#####
 ##########*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#########
@@ -19,9 +19,7 @@
   website, set it as executable, and double-click to open.  If you have a decent
   processor and 8GB RAM, too fucking bad. Everything will crash with image sizes
   produced by this program; you may safely work with ~200 frames at a time.
-* Overkillographic converts images to bmp, modifies bmp, & converts bmp to jpg.
-* If you're using Devuan/Debian, you should already have mogrify available. Else
-  you must install it: apt install imagemagick     It converts to & from bmp. */
+* Overkillographic converts images to bmp, modifies it, & converts it to jpg. */
 
 #include <fstream>
 #include <iostream>
