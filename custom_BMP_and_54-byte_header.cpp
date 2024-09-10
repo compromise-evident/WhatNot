@@ -27,7 +27,7 @@ int main()
 	out_stream.put(  0); // 16    size of header part 2
 	out_stream.put(  0); // 17    size of header part 2
 	out_stream.put(  0); // 18    size of header part 2
-	out_stream.put( 24); // 19    width in pixels (not sub-pixels) (bytes 0,0,0,24 = 00000000000000000000000000011000 = 24)     MODIFY THIS!
+	out_stream.put( 24); // 19    width in pixels (not sub-pixels)  (bytes 0,0,0,24 = 00000000000000000000000000011000 = 24)     MODIFY THIS!
 	out_stream.put(  0); // 20    width in pixels (not sub-pixels)
 	out_stream.put(  0); // 21    width in pixels (not sub-pixels)
 	out_stream.put(  0); // 22    width in pixels (not sub-pixels)
