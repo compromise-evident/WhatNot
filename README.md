@@ -8,3 +8,6 @@ Overkillographic.cpp
 <p align="center">
   <img src="https://raw.githubusercontent.com/compromise-evident/WhatNot/main/Other/Sus_screenshot.png">
 </p>
+
+Crack open a thumb drive and insert it. After a few minutes, take it out and squeeze it.
+If it's hot, it is very likely that the government is in your ass and won't come out.
