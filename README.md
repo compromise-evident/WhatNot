@@ -10,4 +10,4 @@ Overkillographic.cpp
 </p>
 
 Crack open a thumb drive and insert it. After a few minutes, take it out and squeeze it.
-If it's hot, it is very likely that the government is in your ass and won't come out.
+If it's extra hot, it is very likely that the government is in your ass and won't come out.
