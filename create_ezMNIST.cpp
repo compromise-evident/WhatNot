@@ -61,8 +61,8 @@ int main()
 			#        directly by ML handling MNIST        #
 			##,                                         ,##
 			####*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*##*/
-			if(file_byte < 0) {out_stream << "ÿ";} //Tokenized as high in pqML, different from tokenizing user's training-data. This is byte 255 = 11111111.
-			else              {out_stream << "-";} //Tokenized as low  in pqML, different from tokenizing user's training-data. This is byte  45 = 00101101.
+			if(file_byte < 0) {out_stream.put(255);} //Tokenized as high in pqML, different from tokenizing user's training-data. This is byte 255 = 11111111.
+			else              {out_stream   << "-";} //Tokenized as low  in pqML, different from tokenizing user's training-data. This is byte  45 = 00101101.
 		}
 		out_stream << "\n";
 	}
@@ -92,8 +92,8 @@ int main()
 			#        directly by ML handling MNIST        #
 			##,                                         ,##
 			####*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*##*/
-			if(file_byte < 0) {out_stream << "ÿ";} //Tokenized as high in pqML, different from tokenizing user's training-data. This is byte 255 = 11111111.
-			else              {out_stream << "-";} //Tokenized as low  in pqML, different from tokenizing user's training-data. This is byte  45 = 00101101.
+			if(file_byte < 0) {out_stream.put(255);} //Tokenized as high in pqML, different from tokenizing user's training-data. This is byte 255 = 11111111.
+			else              {out_stream   << "-";} //Tokenized as low  in pqML, different from tokenizing user's training-data. This is byte  45 = 00101101.
 		}
 		out_stream << "\n";
 	}
@@ -113,8 +113,8 @@ int main()
 	{	for(int a = 0; a < 28; a++)
 		{	for(int b = 0; b < 28; b++)
 			{	in_stream.get(file_byte);
-				if(file_byte < 0) {out_stream << "ÿ";}
-				else              {out_stream << "-";}
+				if(file_byte < 0) {out_stream.put(255);}
+				else              {out_stream   << "-";}
 			}
 			
 			//Info for each.
@@ -136,8 +136,8 @@ int main()
 	{	for(int a = 0; a < 28; a++)
 		{	for(int b = 0; b < 28; b++)
 			{	in_stream.get(file_byte);
-				if(file_byte < 0) {out_stream << "ÿ";}
-				else              {out_stream << "-";}
+				if(file_byte < 0) {out_stream.put(255);}
+				else              {out_stream   << "-";}
 			}
 			
 			//Info for each.
