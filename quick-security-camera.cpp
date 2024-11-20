@@ -25,7 +25,7 @@ int main()
 	\\\\\\\\\\\\\\\\\\\\\\\                              ///////////////////////
 	\\\\\\\\\\\\\\\\\\                                        ////////////////*/
 	
-	long long seconds_to_sleep_between_image_capture = 1; //Default: 1, min: 1, max: 10^18.
+	long long seconds_to_sleep_between_image_capture = 8; //Default: 1, min: 1, max: 10^18.
 	
 	long long number_of_images_to_capture = 1000000000000000000; //Default: 10^18, min: 1, max: 10^18.
 	
@@ -100,10 +100,10 @@ int main()
 	
 	
 	//Begins.
+	long long unix_time_for_total_seconds_live = time(0);
 	char garbage_byte;
 	for(long long loop = 0; loop < number_of_images_to_capture; loop++)
 	{	system("mkdir Images -p"                    );
-		system("date"                               );
 		system("date --rfc-3339=seconds > last_time");
 		
 		in_stream.open("last_time");
@@ -138,7 +138,37 @@ int main()
 		final_command[final_command_write_bookmark + 4] ='\0';
 		
 		//Captures image.
-		system(final_command);
+		system(final_command); //Looks like: fswebcam -q -r 1920x1080 --no-banner Images/2024-11-19_19:02:03___Tue_Nov_19_07:02:03_PM_MST_2024.jpg
+		
+		//Takes its hash.
+		char sha_command[10000] = "sha512sum Images/";
+		int sha_command_write_bookmark = 17;
+		for(int a = final_command_null_bookmark; final_command[a] != '\0'; a++)
+		{	sha_command[sha_command_write_bookmark] = final_command[a];
+			sha_command_write_bookmark++;
+		}
+		sha_command[sha_command_write_bookmark    ] = ' ';
+		sha_command[sha_command_write_bookmark + 1] = '>';
+		sha_command[sha_command_write_bookmark + 2] = '>';
+		sha_command[sha_command_write_bookmark + 3] = ' ';
+		sha_command[sha_command_write_bookmark + 4] = 's';
+		sha_command[sha_command_write_bookmark + 5] = 'h';
+		sha_command[sha_command_write_bookmark + 6] = 'a';
+		sha_command[sha_command_write_bookmark + 7] ='\n';
+		system(sha_command);
+		
+		system("date");
+		out_stream.open("time_live");
+		out_stream << (((time(0) - unix_time_for_total_seconds_live) / 60) / 60) / 24      << " days, "
+		           << (((time(0) - unix_time_for_total_seconds_live) / 60) / 60)      % 24 << " hours, "
+		           <<  ((time(0) - unix_time_for_total_seconds_live) / 60)            % 60 << " minutes, "
+		           <<   (time(0) - unix_time_for_total_seconds_live)                  % 60 << " seconds\n\n";
+		out_stream.close();
+		
+		cout       << (((time(0) - unix_time_for_total_seconds_live) / 60) / 60) / 24      << " days, "
+		           << (((time(0) - unix_time_for_total_seconds_live) / 60) / 60)      % 24 << " hours, "
+		           <<  ((time(0) - unix_time_for_total_seconds_live) / 60)            % 60 << " minutes, "
+		           <<   (time(0) - unix_time_for_total_seconds_live)                  % 60 << " seconds\n\n";
 		
 		//Sleeps.
 		for(long long a = 0; a < seconds_to_sleep_between_image_capture; a++) {system("sleep 1");}
