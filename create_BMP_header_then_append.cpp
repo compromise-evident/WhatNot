@@ -26,25 +26,25 @@ int main()
 	//Creates header file.
 	long long temp;
 	out_stream.open("append_to_me.bmp");
-	out_stream << "B";                                      //  0    File type
-	out_stream << "M";                                      //  1    File type
+	out_stream <<   "B";                                    //  0    File type
+	out_stream <<   "M";                                    //  1    File type
 	temp = ((width_in_pixels * height_in_pixels) * 3) + 54;
 	out_stream.put(temp % 256); temp /= 256;                //  2    BMP size with header
 	out_stream.put(temp % 256); temp /= 256;                //  3    BMP size with header
 	out_stream.put(temp % 256); temp /= 256;                //  4    BMP size with header
 	out_stream.put(temp % 256); temp /= 256;                //  5    BMP size with header
-	out_stream.put( 0);                                     //  6
-	out_stream.put( 0);                                     //  7
-	out_stream.put( 0);                                     //  8
-	out_stream.put( 0);                                     //  9
-	out_stream.put(54);                                     // 10
-	out_stream.put( 0);                                     // 11
-	out_stream.put( 0);                                     // 12
-	out_stream.put( 0);                                     // 13
-	out_stream.put(40);                                     // 14
-	out_stream.put( 0);                                     // 15
-	out_stream.put( 0);                                     // 16
-	out_stream.put( 0);                                     // 17
+	out_stream.put(  0);                                    //  6
+	out_stream.put(  0);                                    //  7
+	out_stream.put(  0);                                    //  8
+	out_stream.put(  0);                                    //  9
+	out_stream.put( 54);                                    // 10
+	out_stream.put(  0);                                    // 11
+	out_stream.put(  0);                                    // 12
+	out_stream.put(  0);                                    // 13
+	out_stream.put( 40);                                    // 14
+	out_stream.put(  0);                                    // 15
+	out_stream.put(  0);                                    // 16
+	out_stream.put(  0);                                    // 17
 	temp = width_in_pixels;
 	out_stream.put(temp % 256); temp /= 256;                // 18    Width
 	out_stream.put(temp % 256); temp /= 256;                // 19    Width
@@ -55,35 +55,35 @@ int main()
 	out_stream.put(temp % 256); temp /= 256;                // 23    Height
 	out_stream.put(temp % 256); temp /= 256;                // 24    Height
 	out_stream.put(temp % 256); temp /= 256;                // 25    Height
-	out_stream.put( 1);                                     // 26
-	out_stream.put( 0);                                     // 27
-	out_stream.put(24);                                     // 28
-	out_stream.put( 0);                                     // 29
-	out_stream.put( 0);                                     // 30
-	out_stream.put( 0);                                     // 31
-	out_stream.put( 0);                                     // 32
-	out_stream.put( 0);                                     // 33
+	out_stream.put(  1);                                    // 26
+	out_stream.put(  0);                                    // 27
+	out_stream.put( 24);                                    // 28
+	out_stream.put(  0);                                    // 29
+	out_stream.put(  0);                                    // 30
+	out_stream.put(  0);                                    // 31
+	out_stream.put(  0);                                    // 32
+	out_stream.put(  0);                                    // 33
 	temp = (width_in_pixels * height_in_pixels) * 3;
 	out_stream.put(temp % 256); temp /= 256;                // 34    BMP size without header
 	out_stream.put(temp % 256); temp /= 256;                // 35    BMP size without header
 	out_stream.put(temp % 256); temp /= 256;                // 36    BMP size without header
 	out_stream.put(temp % 256); temp /= 256;                // 37    BMP size without header
-	out_stream.put(0);                                      // 38
-	out_stream.put(0);                                      // 39
-	out_stream.put(0);                                      // 40
-	out_stream.put(0);                                      // 41
-	out_stream.put(0);                                      // 42
-	out_stream.put(0);                                      // 43
-	out_stream.put(0);                                      // 44
-	out_stream.put(0);                                      // 45
-	out_stream.put(0);                                      // 46
-	out_stream.put(0);                                      // 47
-	out_stream.put(0);                                      // 48
-	out_stream.put(0);                                      // 49
-	out_stream.put(0);                                      // 50
-	out_stream.put(0);                                      // 51
-	out_stream.put(0);                                      // 52
-	out_stream.put(0);                                      // 53
+	out_stream.put(  0);                                    // 38
+	out_stream.put(  0);                                    // 39
+	out_stream.put(  0);                                    // 40
+	out_stream.put(  0);                                    // 41
+	out_stream.put(  0);                                    // 42
+	out_stream.put(  0);                                    // 43
+	out_stream.put(  0);                                    // 44
+	out_stream.put(  0);                                    // 45
+	out_stream.put(  0);                                    // 46
+	out_stream.put(  0);                                    // 47
+	out_stream.put(  0);                                    // 48
+	out_stream.put(  0);                                    // 49
+	out_stream.put(  0);                                    // 50
+	out_stream.put(  0);                                    // 51
+	out_stream.put(  0);                                    // 52
+	out_stream.put(  0);                                    // 53
 	out_stream.close();
 	
 	
