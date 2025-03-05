@@ -10,6 +10,8 @@ long long height_in_pixels = 500;
 //Image viewers render BMP pixels left-to-right, bottom-up.
 //Each row is (width_in_pixels * 3) bytes long.
 
+//No compression! File size will be: 54-byte header + (width_in_pixels * height_in_pixels * 3-byte pixel)
+
 //Bytes 0,0,255 make red   pixel.
 //Bytes 0,255,0 make green pixel.
 //Bytes 255,0,0 make blue  pixel.
