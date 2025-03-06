@@ -7,7 +7,7 @@ long long height_in_pixels = 500;
 //Each byte: 0 to 255. It's OK if too many or too few bytes.
 //You may append data over time, not necessarily all at once.
 
-//Image viewers render BMP pixels left-to-right, bottom-up.
+//Image viewers render BMP pixels left-to-right, bottom-to-top.
 //Each row is (width_in_pixels * 3) bytes long.
 
 //No compression! File size will be: 54-byte header + (width_in_pixels * height_in_pixels * 3-byte pixel)
