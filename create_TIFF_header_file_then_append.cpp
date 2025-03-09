@@ -24,51 +24,46 @@ int main()
 {	ifstream in_stream;
 	ofstream out_stream;
 	
-	//Table.
-	int  header[ 8] = { 73, 73, 42,  0,  8,  0,  0,  0                }; // 0-7       Header
-	int entries[ 2] = {  9,  0                                        }; // 8-9       Tag count                   (number of entries)
-	int entry_1[12] = {  0,  1,  4,  0,  1,  0,  0,  0,  0,  0,  0,  0}; // 10-21     ImageWidth                  (width)
-	int entry_2[12] = {  1,  1,  4,  0,  1,  0,  0,  0,  0,  0,  0,  0}; // 22-33     ImageLength                 (height)
-	int entry_3[12] = {  2,  1,  4,  0,  1,  0,  0,  0,  8,  0,  0,  0}; // 34-45     BitsPerSample               (bits per sub-pixel)
-	int entry_4[12] = {  3,  1,  4,  0,  1,  0,  0,  0,  1,  0,  0,  0}; // 46-57     Compression
-	int entry_5[12] = {  6,  1,  4,  0,  1,  0,  0,  0,  2,  0,  0,  0}; // 58-69     PhotometricInterpretation   (RGB)
-	int entry_6[12] = { 17,  1,  4,  0,  1,  0,  0,  0,122,  0,  0,  0}; // 70-81     StripOffsets                (byte index where pixel data begins)
-	int entry_7[12] = { 21,  1,  4,  0,  1,  0,  0,  0,  3,  0,  0,  0}; // 82-93     SamplesPerPixel             (sub-pixels per pixel)
-	int entry_8[12] = { 22,  1,  4,  0,  1,  0,  0,  0,  0,  0,  0,  0}; // 94-105    RowsPerStrip
-	int entry_9[12] = { 23,  1,  4,  0,  1,  0,  0,  0,  0,  0,  0,  0}; // 106-117   StripByteCounts             (bytes of pixel data)
-	int  footer[ 4] = {  0,  0,  0,  0                                }; // 118-121   Footer
+	//Bytes.
+	int bytes[122] =
+	{	73,73,      42,0,       8,0,0,0,        9,0,            //Number of entries                                   0-9
+		0,1,        4,0,        1,0,0,0,        0,0,0,0,        //Entry 1: width                                     10-21
+		1,1,        4,0,        1,0,0,0,        0,0,0,0,        //Entry 2: height                                    22-33
+		2,1,        4,0,        1,0,0,0,        8,0,0,0,        //Entry 3: bits per sub-pixel                        34-45
+		3,1,        4,0,        1,0,0,0,        1,0,0,0,        //Entry 4: compression                               46-57
+		6,1,        4,0,        1,0,0,0,        2,0,0,0,        //Entry 5: RGB                                       58-69
+		17,1,       4,0,        1,0,0,0,        122,0,0,0,      //Entry 6: byte index where pixel data begins        70-81
+		21,1,       4,0,        1,0,0,0,        3,0,0,0,        //Entry 7: sub-pixels per pixel                      82-93
+		22,1,       4,0,        1,0,0,0,        0,0,0,0,        //Entry 8: load                                      94-105
+		23,1,       4,0,        1,0,0,0,        0,0,0,0,        //Entry 9: bytes of pixel data                      106-117
+		0,0,0,0                                                 //End                                               118-121
+	};
 	
-	//Edits table.
+	//To add an entry:
+	//Add 1 to the "9".
+	//Add 12 to the "122".
+	//Place your 12-byte entry after "Entry 9".
+	//Optional: code another line as below so it can automatically apply a number to that entry.
+	
+	//Edits bytes.
 	long long temp;
-	temp =  width              ; for(int a = 8; a < 12; a++) {entry_1[a] = (temp % 256); temp /= 256;} //Entry 1: width.
-	temp = height              ; for(int a = 8; a < 12; a++) {entry_2[a] = (temp % 256); temp /= 256;} //Entry 2: height.
-	temp = height              ; for(int a = 8; a < 12; a++) {entry_8[a] = (temp % 256); temp /= 256;} //Entry 8: RowsPerStrip.
-	temp = (width * height) * 3; for(int a = 8; a < 12; a++) {entry_9[a] = (temp % 256); temp /= 256;} //Entry 9: bytes of pixel data.
+	temp =  width              ; for(int a =  18; a <=  21; a++) {bytes[a] = (temp % 256); temp /= 256;} //Entry 1: width
+	temp = height              ; for(int a =  30; a <=  33; a++) {bytes[a] = (temp % 256); temp /= 256;} //Entry 2: height
+	temp = height              ; for(int a = 102; a <= 105; a++) {bytes[a] = (temp % 256); temp /= 256;} //Entry 8: load
+	temp = (width * height) * 3; for(int a = 114; a <= 117; a++) {bytes[a] = (temp % 256); temp /= 256;} //Entry 9: bytes of pixel data
 	
-	//Writes table to file.
+	//Writes bytes to file.
 	out_stream.open("append_to_me.tiff");
-	for(int a = 0; a <  8; a++) {out_stream.put( header[a]);}
-	for(int a = 0; a <  2; a++) {out_stream.put(entries[a]);}
-	for(int a = 0; a < 12; a++) {out_stream.put(entry_1[a]);}
-	for(int a = 0; a < 12; a++) {out_stream.put(entry_2[a]);}
-	for(int a = 0; a < 12; a++) {out_stream.put(entry_3[a]);}
-	for(int a = 0; a < 12; a++) {out_stream.put(entry_4[a]);}
-	for(int a = 0; a < 12; a++) {out_stream.put(entry_5[a]);}
-	for(int a = 0; a < 12; a++) {out_stream.put(entry_6[a]);}
-	for(int a = 0; a < 12; a++) {out_stream.put(entry_7[a]);}
-	for(int a = 0; a < 12; a++) {out_stream.put(entry_8[a]);}
-	for(int a = 0; a < 12; a++) {out_stream.put(entry_9[a]);}
-	for(int a = 0; a <  4; a++) {out_stream.put( footer[a]);}
+	for(int a = 0; a < 122; a++) {out_stream.put(bytes[a]);}
 	out_stream.close();
 	
 	
 	
 	
 	
-	//Sample image (you may remove the following.)
-	in_stream.open("append_to_me.tiff"); out_stream.open("sample_copy_with_random_bytes_appended.tiff"); char file_byte;          //Makes copy of header file.
-	for(int a = 0; a < 122; a++) {in_stream.get(file_byte); out_stream.put(file_byte);} in_stream.close(); out_stream.close();
-	
-	out_stream.open("sample_copy_with_random_bytes_appended.tiff", ios::app);                                                     //Appends to copy of header file.
-	srand(17); for(int a = 0; a < (width * height) * 3; a++) {out_stream.put((rand() % 256));} out_stream.close();
+	//Sample image (remove this.)
+	out_stream.open("sample_copy_with_random_bytes_appended.tiff");
+	for(int a = 0; a <                  122; a++) {out_stream.put(    bytes[a]);}
+	for(int a = 0; a < (width * height) * 3; a++) {out_stream.put(rand() % 256);}
+	out_stream.close();
 }
