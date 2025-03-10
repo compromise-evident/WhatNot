@@ -1,4 +1,4 @@
-//Get hash of files in folder.                                                  Run it: "apt install g++ geany". Open this in Geany. Hit F9 once. F5 to run.
+//Get hash of a folder.                                                         Run it: "apt install g++ geany". Open this in Geany. Hit F9 once. F5 to run.
 
 #include <fstream>
 #include <iostream>
