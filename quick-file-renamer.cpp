@@ -1,10 +1,8 @@
-/// quick-file-renamer - copies files and renames entire file name.             Run it: "apt install g++ geany". Open this in Geany. Hit F9 once. F5 to run.
-
+//Copies files and renames entire file name.                                    Run it: "apt install g++ geany". Open this in Geany. Hit F9 once. F5 to run.
 
 #include <fstream>
 #include <iostream>
 using namespace std;
-
 int main()
 {	//                               user knobs
 
@@ -148,7 +146,7 @@ int main()
 	{	//..........Loads path_to_file[] with file name.
 		in_stream.open("f");
 		file_name_bytes_read_bookmark++;
-		for(long long b = 0; b < file_name_bytes_read_bookmark; b++) {in_stream.get(garbage_byte);} //..........Skips name Bytes that have been read.
+		in_stream.seekg(file_name_bytes_read_bookmark, std::ios::beg); //Skips name Bytes that have been read.
 		
 		int path_to_file_write_bookmark = path_to_file_null_bookmark;
 		in_stream.get(garbage_byte);
