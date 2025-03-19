@@ -47,5 +47,6 @@ int main()
 	If they were deterministic, they would have been also great for secure cryptographic
 	difficulty; "near which private prime, will I find these public gaps?" However,
 	both functions (and variants--this code) makes for great secure randomness
-	generation based on the prime gaps, which you should modify some way. */
+	generation based on the prime gaps, which you would also use for
+	randomly jumping to different primes for next time. */
 }
