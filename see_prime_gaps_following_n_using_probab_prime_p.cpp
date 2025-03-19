@@ -41,7 +41,9 @@ int main()
 	/*It appears that both "mpz_probab_prime_p()" and "mpz_nextprime()" perform operations
 	then call to Miller-Rabin, which uses random witnesses; there are negligible chances
 	of non-deterministic classification. So I refuse to use them in rolling-code.cpp.
-	("mpz_probab_prime_p()" doesn't call to Miller-Rabin if n is too obviously composite.)
-	If they were deterministic, it would have been also great for secure cryptographic
-	difficulty; "near which private prime, will I find these public gaps?" */
+	("mpz_probab_prime_p()" doesn't call Miller-Rabin if n is too obviously composite.)
+	If they were deterministic, they would have been also great for secure cryptographic
+	difficulty; "near which private prime, will I find these public gaps?" However,
+	both functions (and variants--this code) makes for great secure randomness
+	generation based on the prime gaps, which you should modify some way. */
 }
