@@ -18,8 +18,7 @@ int main()
 	cout << "\nPrime gaps after prime:\n" << n << "\n\n";
 	
 	//Prepares.
-	mpz_t prime_1, prime_2, diff; mpz_init(prime_1); mpz_init(prime_2); mpz_init(diff); mpz_set_str(prime_1, n, 10);
-	char gap[100] = {'\0'}; bool alternator;
+	mpz_t prime_1, prime_2, diff; mpz_init(prime_1); mpz_init(prime_2); mpz_init(diff); mpz_set_str(prime_1, n, 10); bool alternator;
 	
 	//Prints gaps.
 	//(This block is loopable & copy-pasteable, always continues where it left off.)
@@ -27,7 +26,7 @@ int main()
 	for(long long a = 0; a < number_of_gaps; a++)
 	{	if(alternator == 0) {mpz_nextprime(prime_2, prime_1); mpz_sub(diff, prime_2, prime_1); alternator = 1;}
 		else                {mpz_nextprime(prime_1, prime_2); mpz_sub(diff, prime_1, prime_2); alternator = 0;}
-		mpz_get_str(gap, 10, diff); cout << gap << "\n";
+		int gap = mpz_get_si(diff); cout << gap << "\n";
 	}
 	if(alternator == 1) {mpz_set(prime_1, prime_2);}
 	
