@@ -25,7 +25,7 @@ int main()
 	\\\\\\\\\\\\\\\\\\\\\\\                              ///////////////////////
 	\\\\\\\\\\\\\\\\\\                                        ////////////////*/
 	
-	long long seconds_to_sleep_between_image_capture = 8; //Default: 1, min: 1, max: 10^18.
+	long long seconds_to_sleep_between_image_capture = 8; //Default: 8, min: 1, max: 10^18.
 	
 	long long number_of_images_to_capture = 1000000000000000000; //Default: 10^18, min: 1, max: 10^18.
 	
