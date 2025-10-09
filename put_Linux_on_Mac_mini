@@ -1,0 +1,13 @@
+After installing Devuan onto a Mac mini, boot live into it with a separate Devuan USB stick and do:
+wget https://sourceforge.net/projects/refind/files/latest/download -O refind-bin-0.14.2.zip
+Decompress file "refind-bin-0.14.2.zip".
+Open folder "refind-bin-0.14.2".
+Right-click and open terminal here.
+sudo ./refind-install
+Shut down and boot normally.
+Log in as root and change timeout from 20 to -1 in file: /boot/efi/EFI/refind/refind.conf
+Reboot (you need not do this again upon reinstalling Devuan.)
+
+
+
+(Tested on a late 2012 Mac mini.)
