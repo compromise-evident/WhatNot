@@ -30,7 +30,7 @@ sh -c "while :; do wget -m -np -N -R 'index.html*' hostname.local:8000/; sleep 1
 
 
 Get NAS by adding one command to Startup Applications. Drop stuff in your Public
-folder, it'll be saved by NAS--a normal computer with a normal OS, and no systemd!
+folder, it'll be saved by your NAS--a normal computer with a normal OS, and no systemd!
 
 WARNING: NEVER run the "http.server" commands on public WiFi or on networks you don't trust!
 http.server means you should NEVER use this NAS to save sensitive data, but only backups that
