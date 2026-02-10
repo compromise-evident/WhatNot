@@ -80,8 +80,8 @@ int main()
 
 /*You can even retrieve / delete images via local network.
 
-* The machine running this should have the Gnome DE.
-  Go to Settings, Sharing. Enable sharing, then enable
+* The machine running this should have the Gnome desktop environment,
+  unfortunately. Go to Settings, Sharing. Enable sharing, then enable
   "File Sharing" without password. This creates the "Public"
   folder in /home/user/ if missing.
 * Run this in a folder in /home/user/Public
