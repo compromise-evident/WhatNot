@@ -78,6 +78,10 @@ int main()
 	}
 }
 
+
+
+
+
 /*You can even retrieve / delete images via local network.
 
 * The machine running this should have the Gnome desktop environment,
@@ -87,4 +91,6 @@ int main()
 * Run this in a folder in /home/user/Public
 * Now any machine on the network has full read / write access
   to that "Public" folder. Find it in your files browser
-  in "Browse Network" / "Other Locations".         */
+  in "Browse Network" / "Other Locations".
+
+Or see github.com/compromise-evident/truly-instant-NAS     */
