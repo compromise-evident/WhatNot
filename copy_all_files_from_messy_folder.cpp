@@ -18,7 +18,7 @@ int main()
 	in_stream.open(path); if(in_stream.fail() == true) {cout << "\nNo path " << path << "\n"; return 0;} in_stream.close();
 	
 	//Gets number of files.
-	string find = "find "; find += path; find += " -type f | sort -V > f"; system(find.c_str()); //find /path/to/FOLDER -type f | sort -V > f
+	string find = "find \""; find += path; find += "\" -type f | sort -V > f"; system(find.c_str()); //find "/path/to/FOLDER" -type f | sort -V > f
 	long long number_of_files = 0;
 	in_stream.open("f"); in_stream.get(file_byte);
 	for(; in_stream.eof() == false; in_stream.get(file_byte)) {if(file_byte == '\n') {number_of_files++;}}
