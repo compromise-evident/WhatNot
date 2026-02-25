@@ -1,10 +1,10 @@
 Rules
 
 * Encryption strength first.
-* Single files in core C++.
-* Everything in main().
 * No functions or OOP.
-* Original software.
+* Single C++ files.
+* Minimalist.
+* Original.
 
 
 
@@ -17,4 +17,5 @@ FAQ
   or have malicious features implemented willingly or against their will.
 
 * Do you accept code contributions?
-  Not a single line, not a single character. Contact me if you're auditing.
+  Not a single line, not a single character.
+  Feel free to contact me for auditing help.
