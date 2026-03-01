@@ -17,7 +17,7 @@ int main()
 	     << "\n(2) Hex back to bin."
 	     << "\n\nOption: "; int o; cin >> o;
 	
-	//Gets path, fixes it, tries it.
+	//Gets path, fixes it if dropped.
 	cout << "Drop/enter file:\n";
 	char path[100000] = {'\0'}; cin.getline(path, 100000); if(path[0] == '\0') {cin.getline(path, 100000);}
 	if(path[0] == '\'') {for(int bm = 0, a = 0; a < 100000; a++) {if(path[a] != '\'') {path[bm] = path[a]; if(path[bm] == '\\') {path[bm] = '\'';} bm++;}}}
@@ -29,9 +29,7 @@ int main()
 	{	char symbols[17] = {"0123456789abcdef"};
 		in_stream.open(path); out_stream.open("hex"); in_stream.get(file_byte);
 		for(; in_stream.eof() == false; in_stream.get(file_byte))
-		{	raw_byte = file_byte; if(raw_byte < 0) {raw_byte += 256;}
-			out_stream << symbols[raw_byte >>  4];
-			out_stream << symbols[raw_byte &  15];
+		{	out_stream << symbols[(unsigned char)file_byte >> 4] << symbols[file_byte & 0xf];
 		}
 		in_stream.close(); out_stream.close();
 	}
