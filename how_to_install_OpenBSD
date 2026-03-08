@@ -31,9 +31,8 @@ chmod +x ~/.xsession
 su
 reboot
 
-Log in to the DE, then do
+Log in to the DE,
 su
-fw_update
 reboot
 
 ----------------------------------------------------------------------------------------------------
