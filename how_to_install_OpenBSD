@@ -1,7 +1,7 @@
 Connect the machine to the internet via ethernet cable.
 You'll mostly be pressing enter as defaults are suggested.
 WARNING: OpenBSD, specifically OpenBSD, is for obnoxiously
-secure servers and related hardware; DEs are not polished.
+secure servers and related hardware; DEs are barely usable.
 
 ----------------------------------------------------------------------------------------------------
 
@@ -58,4 +58,4 @@ Why I want to move from Linux to OpenBSD:
 6. OpenBSD philosophy: correctness, minimalism.
    Or as I like to say, perfection is nothingness.
 
-Once OpenBSD DEs are polished, I'll use it.
+Once OpenBSD DEs are highly polished, I'll use it.
