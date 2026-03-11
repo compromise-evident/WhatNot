@@ -4,7 +4,7 @@ Overkillographic.cpp
 <br>
 <br>
 
-# Suspicious photo of a screenshot
+# Photo of a suspicious screenshot
 <p align="center">
   <img src="https://raw.githubusercontent.com/compromise-evident/WhatNot/main/Other/Sus_screenshot.png">
 </p>
