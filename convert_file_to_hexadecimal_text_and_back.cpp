@@ -26,10 +26,10 @@ int main()
 	
 	//Bin to hex.
 	if(o == 1)
-	{	char symbols[17] = {"0123456789abcdef"};
-		in_stream.open(path); out_stream.open("hex"); in_stream.get(file_byte);
+	{	in_stream.open(path); out_stream.open("hex"); in_stream.get(file_byte);
 		for(; in_stream.eof() == false; in_stream.get(file_byte))
-		{	out_stream << symbols[(unsigned char)file_byte >> 4] << symbols[file_byte & 0xf];
+		{	static const char symbols[] = "0123456789abcdef";
+			out_stream << symbols[(unsigned char)file_byte >> 4] << symbols[file_byte & 0xf];
 		}
 		in_stream.close(); out_stream.close();
 	}
