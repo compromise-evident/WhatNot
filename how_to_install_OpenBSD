@@ -12,7 +12,7 @@ Install (for legacy boot, single disk):
 3. When asked "Encrypt the root disk..." - Type "p".
 4. When asked "Use (W)hole disk MBR..." - Type "w".
 5. When asked (again) "Use (W)hole disk MBR..." - Type "w".
-6. If   asked "HTTP Server?..." but no default option is shown - Type "cdn.openbsd.org".
+6. If   asked "HTTP Server?..." but no default option is available - Type "cdn.openbsd.org".
 
 ----------------------------------------------------------------------------------------------------
 
