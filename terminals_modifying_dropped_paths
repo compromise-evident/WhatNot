@@ -1,0 +1,32 @@
+Terminals modify paths that were drag-n-dropped.
+It was not too long ago that some DEs like KDE deviated from standards!
+I tested default terminals in DEs, each DE being a fresh OS install.
+This is useful, for example, if your users drop paths in your C++.
+Today is 2026_03_23, and everything here is the same, for once.
+
+
+
+Devuan 6.1.0
+
+                         Dropping                                  Dropping
+DE               "/home/user/Desktop/file"                "/home/user/Desktop/fi'le"                  Date tested
+-----------------------------------------------------------------------------------------------------------------
+MATE             "'/home/user/Desktop/file' "             "'/home/user/Desktop/fi'\''le' "             2026_03_22
+Xfce             "'/home/user/Desktop/file' "             "'/home/user/Desktop/fi'\''le' "             2026_03_22
+Cinnamon         "'/home/user/Desktop/file' "             "'/home/user/Desktop/fi'\''le' "             2026_03_22
+KDE              "'/home/user/Desktop/file' "             "'/home/user/Desktop/fi'\''le' "             2026_03_22
+LXQt             "'/home/user/Desktop/file' "             "'/home/user/Desktop/fi'\''le' "             2026_03_22
+LXDE             No drag-n-drop. But right-click, Copy Path(s), Ctrl+Shift+v works without modifying.  2026_03_22
+
+
+
+
+
+
+OpenBSD 7.8
+
+                         Dropping                                  Dropping
+DE               "/home/user/Desktop/file"                "/home/user/Desktop/fi'le"                  Date tested
+-----------------------------------------------------------------------------------------------------------------
+MATE             "'/home/user/Desktop/file' "             "'/home/user/Desktop/fi'\''le' "             2026_03_23
+Xfce             "'/home/user/Desktop/file' "             "'/home/user/Desktop/fi'\''le' "             2026_03_23
