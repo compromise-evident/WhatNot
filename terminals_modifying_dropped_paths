@@ -16,6 +16,7 @@ Xfce             "'/home/user/Desktop/file' "             "'/home/user/Desktop/f
 Cinnamon         "'/home/user/Desktop/file' "             "'/home/user/Desktop/fi'\''le' "             2026_03_22
 KDE              "'/home/user/Desktop/file' "             "'/home/user/Desktop/fi'\''le' "             2026_03_22
 LXQt             "'/home/user/Desktop/file' "             "'/home/user/Desktop/fi'\''le' "             2026_03_22
+GNOME            "'/home/user/Desktop/file' "             "'/home/user/Desktop/fi'\''le' "             2026_03_23
 LXDE             No drag-n-drop. But right-click, Copy Path(s), Ctrl+Shift+v works without modifying.  2026_03_22
 
 
