@@ -40,12 +40,13 @@ reboot
 
 FYI:
 
-Update firmware:     fw_update       (as root)
-Update applications: pkg_add -u      (as root)
-Update base system:  syspatch        (as root)
-Power off: "halt" then hold power    (as root)
-dd if=/path/to/.iso/ of=/dev/rsd1c   (as root)
-List disks: sysctl hw.disknames
+Update firmware:     fw_update                        (as root)
+Update applications: pkg_add -u                       (as root)
+Update base system:  syspatch                         (as root)
+Power off:           halt                             (as root)
+Restart:             reboot                           (as root)
+List disks:          sysctl hw.disknames
+Bootable USB stick:  dd if=/path/to/iso of=/dev/rsd1c (as root)
 
 ----------------------------------------------------------------------------------------------------
 
