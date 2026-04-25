@@ -52,12 +52,12 @@ Bootable USB stick:  dd if=/path/to/iso of=/dev/rsd1c (as root)
 
 Why I want to move from Linux to OpenBSD:
 
-1. Linux kernel file descriptor limits.
-2. Linux kernel caching instead of writing.
-3. Linux kernel optimizations; bloating.
-4. Linux kernel bows down to proprietary hw.
-5. Linux kernel bows down to proprietary sw.
-6. OpenBSD philosophy: correctness, minimalism.
+1. Linux kernel: file descriptor limits.
+2. Linux kernel: caching instead of writing.
+3. Linux kernel: optimizations; bloating.
+4. Linux kernel: bows down to proprietary hw.
+5. Linux kernel: bows down to proprietary sw.
+6. OpenBSD philosophy: minimalism, correctness.
    Or as I like to say, perfection is nothingness.
 
 Once OpenBSD DEs are highly polished, I'll use it.
