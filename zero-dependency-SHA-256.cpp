@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 int main()
-{	std::string SHA_256_input = "abc";
+{	std::string SHA_256_input = "abc"; //Can be any file too.
 	std::string SHA_256_output;
 	
 	
