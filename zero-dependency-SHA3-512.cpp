@@ -31,6 +31,9 @@ int main()
 	const int r[25] = {0, 1, 62, 28, 27, 36, 44, 6, 55, 20, 3, 10, 43, 25, 39, 41, 45, 15, 21, 8, 18, 2, 61, 56, 14};
 	
 	//Pads input.
+	//Your input is processed 72 bytes at-a-time, first-to-last. So bytes are appended to your input, until it's a multiple of 72.
+	//However, 2 bytes are appended regardless. If you want the least amount of bytes to be appended to your input,
+	//make sure your input length is a multiple of 72, minus 2. Then 2 bytes will be appended, no more, no less.
 	msg.push_back(0x06);
 	for(; (msg.length() % 72) != 71;) {msg.push_back(0x00);} //Appends 0x00 bytes until (message length mod 72) = 71 bytes.
 	msg.push_back(0x80);

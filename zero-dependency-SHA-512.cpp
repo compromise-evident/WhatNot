@@ -46,6 +46,9 @@ int main()
 	};
 	
 	//Pads input.
+	//Your input is processed 128 bytes at-a-time, first-to-last. So bytes are appended to your input, until it's a multiple of 128.
+	//However, 17 bytes are appended regardless. If you want the least amount of bytes to be appended to your input,
+	//make sure your input length is a multiple of 128, minus 17. Then 17 bytes will be appended, no more, no less.
 	unsigned long long orig_len_bits = msg.length() * 8ULL;
 	msg.push_back((char)0x80);                                         //Appends a '1' bit (0x80 byte).
 	for(; (msg.length() % 128) != 112;) {msg.push_back((char)0x00);}   //Appends 0x00 bytes until (message length mod 128) = 112 bytes.
