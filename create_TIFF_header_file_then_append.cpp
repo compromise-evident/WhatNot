@@ -54,7 +54,7 @@ int main()
 		0,0,0,0                                                 //End                                               118-121
 	};
 	
-	//Edits header bytes for 3B/p.
+	//Edits header bytes for 3B/pixel.
 	bytes[66] = 2;                                                                                       //Entry 5: RGB/grayscale
 	bytes[90] = 3;                                                                                       //Entry 7: sub-pixels per pixel
 	temp =  width              ; for(int a =  18; a <=  21; a++) {bytes[a] = (temp % 256); temp /= 256;} //Entry 1: width
@@ -63,7 +63,7 @@ int main()
 	temp = (width * height) * 3; for(int a = 114; a <= 117; a++) {bytes[a] = (temp % 256); temp /= 256;} //Entry 9: bytes of pixel data
 	out_stream.open("append_to_me_3_bytes_per_pixel.tiff"); for(int a = 0; a < 122; a++) {out_stream.put(bytes[a]);} out_stream.close();
 	
-	//Edits header bytes for 1B/p.
+	//Edits header bytes for 1B/pixel.
 	bytes[66] = 1;                                                                                       //Entry 5: RGB/grayscale
 	bytes[90] = 1;                                                                                       //Entry 7: sub-pixels per pixel
 	temp =  width              ; for(int a =  18; a <=  21; a++) {bytes[a] = (temp % 256); temp /= 256;} //Entry 1: width
