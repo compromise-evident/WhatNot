@@ -37,9 +37,11 @@ int main()
 	//However, 9 bytes are appended regardless. If you want the least amount of bytes to be appended to your input,
 	//make sure your input length is a multiple of 64, minus 9. Then 9 bytes will be appended, no more, no less.
 	unsigned long long bit_len = (unsigned long long)msg.length() * 8;
-	msg.push_back((char)0x80);                                                        //Appends a '1' bit (0x80 byte).
-	for(; (msg.length() % 64) != 56;) {msg.push_back((char)0x00);}                    //Appends 0x00 bytes until (message length mod 64) = 56 bytes.
-	for(int a = 7; a >= 0; a--) {msg.push_back((char)((bit_len >> (a * 8)) & 0xFF));} //Appends original length as 8-byte big-endian integer.
+	msg.push_back((char)0x80);                                         //Appends a '1' bit (0x80 byte).
+	for(; (msg.length() % 64) != 56;) {msg.push_back((char)0x00);}     //Appends 0x00 bytes until (message length mod 64) = 56 bytes.
+	for(int a = 7; a >= 0; a--)                                        //Appends original length as 8-byte big-endian integer.
+	{	msg.push_back((char)((bit_len >> (a * 8)) & 0xFF));
+	}
 	
 	//Processes each 64-byte chunk.
 	for(unsigned long long block_offset = 0; block_offset < msg.length(); block_offset += 64)
