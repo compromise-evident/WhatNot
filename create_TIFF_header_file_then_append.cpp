@@ -2,7 +2,7 @@
 long long  width = 500; //image  width in pixels
 long long height = 500; //image height in pixels
 
-/*Creates 122-byte TIFF header file,
+/*Creates a 122-byte TIFF header file,
 to which you may append 3 bytes per pixel:
 1st byte: intensity of red   sub-pixel.
 2nd byte: intensity of green sub-pixel.
@@ -21,7 +21,7 @@ White  pixel: bytes 255,255,255
 Gray   pixel: bytes n,n,n
 Purple pixel: bytes 255,0,255
 
-Creates also 122-byte TIFF header file,
+Creates also a 122-byte TIFF header file,
 to which you may append 1 byte per pixel:
 one intensity for red, green, and blue.
 From this, you get the full grayscale.
