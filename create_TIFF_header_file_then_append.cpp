@@ -12,7 +12,7 @@ From this, you get all the colors.
 byte 0 = no power, byte 255 = full power.
 It's OK to append too many bytes. Pixels
 will be rendered left-to-right, top-down.
-Just like reading a physical book in USA.
+Just like reading a paragraph in the USA.
 Red    pixel: bytes 255,0,0
 Green  pixel: bytes 0,255,0
 Blue   pixel: bytes 0,0,255
@@ -29,7 +29,7 @@ From this, you get the full grayscale.
 byte 0 = no power, byte 255 = full power.
 It's OK to append too many bytes. Pixels
 will be rendered left-to-right, top-down.
-Just like reading a physical book in USA.
+Just like reading a paragraph in the USA.
 Black pixel: byte 0
 White pixel: byte 255
 Gray  pixel: byte n */
