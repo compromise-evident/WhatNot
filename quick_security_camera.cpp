@@ -19,7 +19,7 @@ int main()
 	system("fswebcam -q -r 1920x1080 --no-banner                      temp/on_board_webcam_test.jpg");
 	system("fswebcam -q -r 1920x1080 --no-banner --device /dev/video2 temp/external_webcam_test.jpg");
 	
-	system("clear"); system("clear");
+	std::cout << "\033[2J\033[3J\033[1;1H"; //Clears screen, erasing history.
 	bool presence_of_on_board_webcam = false;
 	bool presence_of_external_webcam = false;
 	in_stream.open("temp/on_board_webcam_test.jpg"); if(in_stream.fail() == false) {presence_of_on_board_webcam = true;} in_stream.close();
