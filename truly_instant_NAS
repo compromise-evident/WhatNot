@@ -1,0 +1,43 @@
+Your computer:
+Paste this command to Startup apps then restart:
+sh -c "python3 -m http.server 8000 -d ~/Public"
+
+NAS computer:
+Paste this command to startup applications, replace "hostname" with the hostname of YOUR computer, then restart:
+sh -c "while :; do sleep 10; wget -m -np -N -R 'index.html*' hostname.local:8000/; done"
+
+
+
+
+
+
+
+
+
+
+How it works:
+
+YOUR COMPUTER
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+       python3 -m http.server 8000                  opens your computer's files to your network, like home WiFi. (Only those who are connected to your WiFi can see those files.)
+       python3 -m http.server 8000 -d ~/Public      opens ONLY your Public folder to the local network. (Again, only those who are connected to your WiFi can see that folder.) This is the line used by this NAS tool!
+sh -c "python3 -m http.server 8000 -d ~/Public"     wrapping things in sh -c "" turns it into a program.
+
+NAS COMPUTER
+----------------------------------------------------------------------------------------------------------------------------------------------------
+while :; do wget -m -np -N -R 'index.html*' hostname.local:8000/; sleep 10; done
+Every 10 seconds, this line keeps downloading items (new & modified) from the URL "hostname.local:8000". You can visit that URL in a browser and see
+everything and download manually if you want. Files & folders are saved to "/home/user/hostname.local:8000".
+
+
+
+You can even grab an old router, or modem+router, and connect
+YOUR computer and the NAS computer to that router via
+WiFi or ethernet, and this NAS will work the same!
+
+
+
+WARNING:
+To improve privacy, use ethernet cables rather than WiFi.
+Never run this or the "http.server" commands on public WiFi or on networks you don't trust!
+http.server means you should NEVER use this NAS to save sensitive data, but only backups that you wouldn't mind a judge reading through.
