@@ -5,17 +5,16 @@ it should be the first tab in your editor. */
 #include <fstream>
 #include <iostream>
 #include <string>
-using namespace std;
 int main()
 {	int raw_byte;
 	char file_byte;
-	ifstream in_stream;
-	ofstream out_stream;
+	std::ifstream in_stream;
+	std::ofstream out_stream;
 	
 	//Gets path, fixes it if dropped.
-	cout << "\nDrop/enter file:\n"; string path; getline(cin, path); if(path[0] == '\0') {getline(cin, path);}
+	std::cout << "\nDrop/enter file:\n"; std::string path; std::getline(std::cin, path); if(path[0] == '\0') {std::getline(std::cin, path);}
 	if(path[0] == '\'') {path.erase(0, 1); path.pop_back(); path.pop_back();}
-	in_stream.open(path); if(in_stream.fail()) {cout << "\nNo path " << path << "\n"; return 1;} in_stream.close();
+	in_stream.open(path); if(!in_stream) {std::cout << "\nNo path " << path << "\n"; return 1;} in_stream.close();
 	
 	//Gets byte occurrence.
 	in_stream.open(path); in_stream.get(file_byte); long long byte_occur[256] = {0};
@@ -40,7 +39,7 @@ int main()
 	for(; !in_stream.eof(); in_stream.get(file_byte)) {raw_byte = file_byte; if(raw_byte < 0) {raw_byte += 256;} out_stream << raw_byte << "\n";}
 	in_stream.close(); out_stream.close();
 	
-	in_stream.open(path); out_stream.open("analysis", ios::app); in_stream.get(file_byte);
+	in_stream.open(path); out_stream.open("analysis", std::ios::app); in_stream.get(file_byte);
 	out_stream << "\nOnly the 97 standard text bytes (9, 10, and 32-126):\n";
 	for(; !in_stream.eof(); in_stream.get(file_byte))
 	{	if      ((file_byte > 31) && (file_byte < 127)) {out_stream.put(file_byte);}
@@ -49,20 +48,15 @@ int main()
 	in_stream.close(); out_stream.close();
 }
 
-
-
-
-
-
 /*
 
 #########*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*##########
 #####'`                                                                  `'#####
 ###'                                                                        '###
 ##                                                                            ##
-#,                          Dealing with file bytes                           ,#
-#'                                as raw bytes                                '#
-##                                 (0 to 255)                                 ##
+#,                               Raw file bytes                               ,#
+#'                                 (0 to 255)                                 '#
+##                                                                            ##
 ###,                                                                        ,###
 #####,.                                                                  .,#####
 ##########*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#########
@@ -90,7 +84,7 @@ else               {out_stream.put(raw_byte - 256);}
 #####'`                                                                  `'#####
 ###'                                                                        '###
 ##                                                                            ##
-#,                                    Bytes                                   ,#
+#,                               Table of bytes                               ,#
 #'                                                                            '#
 ##                                                                            ##
 ###,                                                                        ,###
@@ -367,7 +361,7 @@ Dec	Hex	  Binary   Char  Description
 #####'`                                                                  `'#####
 ###'                                                                        '###
 ##                                                                            ##
-#,        True C++ data type specs WITHOUT unspecified behavior so far        ,#
+#,                             Specs of variables                             ,#
 #'                                                                            '#
 ##                                                                            ##
 ###,                                                                        ,###
@@ -411,91 +405,65 @@ ________________________________________________________________________________
 #####'`                                                                  `'#####
 ###'                                                                        '###
 ##                                                                            ##
-#,                                  What not                                  ,#
+#,                                Useful stuff                                ,#
 #'                                                                            '#
 ##                                                                            ##
 ###,                                                                        ,###
 #####,.                                                                  .,#####
 ##########*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#########
 
-FOLDERS/FILES:
-~~~~~~~~~~~~~~
-system("ls -Av path_to_folder > my_list.txt");   //Creates a text file in running dir--containing a list of file names in that same dir (standard "ls" command in GNU+Linux.)
-system("mkdir -p keys");                         //Creates folder.
-system("mkdir -p /home/nikolay/Desktop/F");      //Creates folder elsewhere.
-system("mkdir -p keys/Other");                   //Creates folder within a folder.
+SEARCH A FOLDER:                grep -rlF 'the word' /path
 
-out_stream.open("keys/file_1");                  //File I/O in folders in working dir.
-out_stream.open("/home/nikolay/keys/a");         //File I/O in folders elsewhere.
-out_stream.open("/media/nikolay/USB_name/a");    //File I/O in USB drive.
+GET FILE SIZE IN BYTES:         unsigned long long size = std::filesystem::file_size(path);          Needs #include <filesystem>
 
-^Confirmed on both Debian and Devuan (Dec 31 2022)
+CREATE FOLDER NO MATTER WHAT:   std::filesystem::create_directories("my_folder");                    Needs #include <filesystem>
 
-MKDIR WITH VARIABLE:
-~~~~~~~~~~~~~~~~~~~~
-#include <sys/stat.h> //For mkdir() (creating folders using variable.)
-mkdir(file_name, 0777);
+DELETE FOLDER NO MATTER WHAT:   std::filesystem::remove_all("my_folder");                            Needs #include <filesystem>
 
-MKDIR WITH VARIABLE, WITHOUT INCLUDE DIRECTIVES:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-char folder_name[100] = {"mkdir -p Folder_1"};
-system(folder_name);
+GET LIST OF FILES IN FOLDER:    system("ls -Av path/to/folder > my_list.txt");
 
-REMOVING:
-~~~~~~~~~
-remove("file_name");                 //as actual file. Add path as above if in folder.
-remove(file_name);                   //as variable for file (char array.)
-system("rm -r -f /path_to_FOLDER");  //as directory.
+AS VARIABLE:                    string ls = "ls -Av "; ls += "path/to/folder"; ls += " > f"; system(ls.c_str());
 
-WEB:
-~~~~
-system("wget -q https://github.com/compromise-evident/Authorship/archive/refs/heads/main.zip");
+RUN ANOTHER C++ PROGRAM:        system("/home/user/Desktop/Authorship");   //The executable made by Geany or with the g++ command (both produce the same file.)
 
-DECOMPRESS:
-~~~~~~~~~~~
-system("unzip -qq main.zip");
+TERMINAL OUTPUT TO FILE:        system("sha256sum my_file > hash_file");
 
-AS VARIABLE:
-~~~~~~~~~~~~
-char groupOTP[100] = {"wget -q https://github.com/compromise-evident/groupOTP/archive/refs/heads/main.zip"};
-system(groupOTP);
+CHANGE WORKING DIR:             chdir("/home/user/Desktop/my_folder");          Needs #include <unistd.h>
 
-RUN ANOTHER C++ PROGRAM:
-~~~~~~~~~~~~~~~~~~~~~~~~
-system("/home/user/Desktop/Authorship");   //That Authorship file is the executable made by Geany or with the g++ command (both produce the same file.)
+APPEND TO FILE:                 out_stream.open(path, std::ios::app);
 
-WRITE TERMINAL OUTPUT TO FILE INSTEAD:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-system("sha256sum main.zip > hash_file");
+DO NOT OPTIMIZE VARIABLE:       volatile int a;
 
-..........Basically, any bash commands will work in C++ if wrapped in system("");  See ss64.com/bash/
+INVISIBLE WHILE TYPING:         cout.setstate(ios::failbit); //Disables cout.
+and:                            cout.clear();                //Restores cout.
 
-SOME DIR TO LOOK AT:
-~~~~~~~~~~~~~~~~~~~~
-C4droid-exported apk's default dir (actual?): content://com.android.externalstorage.documents/tree/primary:Android/data/com.my_app_name/files
-C4droid-exported apk's default dir          : /storage/emulated/0/Android/data/com.my_app_name/files
+CLEAR TERMINAL:                 std::cout << "\033[2J\033[3J\033[1;1H"; //Clears screen, erasing history.
+and:                            std::cout << "\033[2J\033[1;1H";        //Clears screen, keeping history.
 
-CHANGE WORKING DIR:
-~~~~~~~~~~~~~~~~~~~
-#include <unistd.h> //for chdir()
-chdir("/home/user/Desktop/my_folder");
+GET LIST OF FILES AND
+FOLDERS FROM A FOLDER
+without using system():
 
-APPEND TO FILE:
-~~~~~~~~~~~~~~~~~
-out_stream.open(path_to_file, ios::app);
-
-DO NOT OPTIMIZE VAR:
-~~~~~~~~~~~~~~~~~
-volatile int a; //Useful for eliminating timing interference for things like writes to disk.
-
-cout.setstate(ios::failbit); //Disables cout.
-cout.clear();                //Restores cout.
-
-std::cout << "\033[2J\033[1;1H";        //Clears screen, keeping history.
-std::cout << "\033[2J\033[3J\033[1;1H"; //Clears screen, erasing history.
-
-Search a folder for words. Returns file names containing that word.
-grep -rlF 'the word' /path
+	//Needs:
+	//#include <algorithm>
+	//#include <filesystem>
+	//#include <fstream>
+	//#include <string>
+	//#include <vector>
+	
+	std::string path = "path_to_folder";
+	
+	//Gets list of files & folders from a folder.
+	std::vector <std::string>   file_list;
+	std::vector <std::string> folder_list;
+	for(const auto& entry : std::filesystem::recursive_directory_iterator(path))
+	{	     if(entry.is_regular_file()) {  file_list.push_back(entry.path().lexically_relative(path).string());} //Loads list of   files to RAM as relative paths.
+		else if(entry.is_directory   ()) {folder_list.push_back(entry.path().lexically_relative(path).string());} //Loads list of folders to RAM as relative paths.
+	}
+	std::sort(  file_list.begin(),   file_list.end()); //Sorts list of   files in RAM.
+	std::sort(folder_list.begin(), folder_list.end()); //Sorts list of folders in RAM.
+	out_stream.open("list_of_files"  ); for(const auto& file_path : file_list  ) {out_stream << file_path << "\n";} out_stream.close(); //Writes list of files.
+	out_stream.open("list_of_folders"); for(const auto& file_path : folder_list) {out_stream << file_path << "\n";} out_stream.close(); //Writes list of folders.
 
 
 
@@ -508,7 +476,7 @@ grep -rlF 'the word' /path
 #####'`                                                                  `'#####
 ###'                                                                        '###
 ##                                                                            ##
-#,                               GNU+Linux tools                              ,#
+#,                             Useful Linux tools                             ,#
 #'                                                                            '#
 ##                                                                            ##
 ###,                                                                        ,###
@@ -565,12 +533,12 @@ passwd                         (change passwd for user)
 passwd root                    (change passwd for root)
 sudo dmidecode -t memory       (list computer specs as root)   options: bios, system, baseboard, chassis, processor, memory, cache, connector, slot,     sudo dmidecode -s system-product-name
 
-Commands for C++. Terminal: use what's quoted:
-Record as raw audio for 7 seconds using sox:     system("rec -r 44100 -c 2 -b 8 -e unsigned-integer -t raw temp/recorded.raw trim 0 7");
-Convert raw audio (any file) to .wav using sox:  system("sox -r 44100 -e unsigned -b 8 -c 1 my_file.raw -t wav out_file.wav");
-Get length of .wav file in seconds using sox:    system("sox my_audio.wav -n stat 2>&1 | grep 'Length' > seconds.txt");
-Play audio file through vlc then close vlc:      system("vlc my_audio.wav --play-and-exit 2>/dev/null &");
-Set system volume using pre-installed ALSA:      system("amixer -q set Master 75%");
+Commands for C++. For terminal: use what's quoted:
+Record as raw audio for 7 seconds using sox:        system("rec -r 44100 -c 2 -b 8 -e unsigned-integer -t raw temp/recorded.raw trim 0 7");
+Convert raw audio (any file) to .wav using sox:     system("sox -r 44100 -e unsigned -b 8 -c 1 my_file.raw -t wav out_file.wav");
+Get length of .wav file in seconds using sox:       system("sox my_audio.wav -n stat 2>&1 | grep 'Length' > seconds.txt");
+Play audio file through vlc then close vlc:         system("vlc my_audio.wav --play-and-exit 2>/dev/null &");
+Set system volume using pre-installed ALSA:         system("amixer -q set Master 75%");
 
 
 
@@ -583,20 +551,37 @@ Set system volume using pre-installed ALSA:      system("amixer -q set Master 75
 #####'`                                                                  `'#####
 ###'                                                                        '###
 ##                                                                            ##
-#,                                  Personal                                  ,#
+#,                                Laptop setup                                ,#
 #'                                                                            '#
 ##                                                                            ##
 ###,                                                                        ,###
 #####,.                                                                  .,#####
 ##########*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#########
 
-Laptop (Devuan, MATE):
+Devuan, MATE
 apt install amberol g++ geany geany-plugin-automark geany-plugin-spellcheck gparted lightdm-settings mate-tweak shotwell
-If Apple: cut speaker wires to eliminate chime, cut keyboard backlight cable, physically swap keyboard keys "fn" and "left Ctrl", then do as root:
-	echo "options hid_apple swap_fn_leftctrl=1 fnmode=2" > /etc/modprobe.d/hid_apple.conf
-	sudo update-initramfs -u -k all
+If Apple: cut speaker wires to eliminate chime ad, cut keyboard backlight cable, sand F9 & F5, physically swap keyboard keys "fn" and "left Ctrl", then do as root:
+    echo "options hid_apple swap_fn_leftctrl=1 fnmode=2" > /etc/modprobe.d/hid_apple.conf
+    sudo update-initramfs -u -k all
 
-Style
+
+
+
+
+
+
+
+#########*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*##########
+#####'`                                                                  `'#####
+###'                                                                        '###
+##                                                                            ##
+#,                              Programming style                             ,#
+#'                                                                            '#
+##                                                                            ##
+###,                                                                        ,###
+#####,.                                                                  .,#####
+##########*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#########
+
  1. Security, not convenience.
  2. Overkill security.
  3. Single C++ files.
@@ -616,8 +601,6 @@ for(; in_stream.get(file_byte);) {out_stream.put(file_byte);}
 or if(in_stream.get(file_byte)) {out_stream.put(file_byte);}
 in_stream.close();
 out_stream.close();
-
-
 
 FAQ
 Big tech feels insecure about publishing their code, what makes you different?
