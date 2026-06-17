@@ -37,8 +37,7 @@ int main()
 	msg.push_back(0x80);
 	
 	//Processes each 136-byte chunk.
-	unsigned long long msg_len = msg.length();
-	for(unsigned long long block_offset = 0; block_offset < msg_len; block_offset += 136)
+	for(unsigned long long block_offset = 0; block_offset < msg.length(); block_offset += 136)
 	{	//XOR the 136-byte block into the state.
 		for(int i = 0; i < 17; i++)
 		{	unsigned long long word = 0;
