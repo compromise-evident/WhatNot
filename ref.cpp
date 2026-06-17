@@ -71,8 +71,7 @@ int raw_byte = file_byte;
 if(raw_byte < 0) {raw_byte += 256;}   //raw_byte is now 0 to 255 (256 values.)
 
 WRITE
-if(raw_byte < 128) {out_stream.put(raw_byte      );}
-else               {out_stream.put(raw_byte - 256);}
+out_stream.put(raw_byte);
 
 
 
