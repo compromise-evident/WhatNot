@@ -12,7 +12,7 @@ ref.cpp should be the first tab in your editor. It's a reference and a tool. Bec
 * Bytes table.
 * Specs of variables.
 * Useful commands, what they are, and how to use them.
-* Linux tools, what they are, and how to use them.
+* Useful Linux tools, what they are, and how to use them.
 * A place to keep your laptop setup info.
 * A place to keep your programming style info.
 
