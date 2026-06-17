@@ -216,8 +216,6 @@ int main()
 	{	std::cout << a << " = " << list[a] << "\n";
 	}
 	
-	
-	
 	/*Now go and solve any first few Project Euler problems and
 	problem 104, USING BRUTE FORCE AND ONLY WHAT YOU KNOW SO FAR!
 	github.com/compromise-evident/what-not/blob/main/PE_104.cpp
