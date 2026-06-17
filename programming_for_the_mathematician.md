@@ -1,4 +1,4 @@
-<!-- The shortest C++ intro right in the README. -->
+# The shortest C++ intro right in the README
 
 * ```apt install g++ geany```
 * Copy the following using the copy button.
