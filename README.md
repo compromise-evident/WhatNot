@@ -1,5 +1,20 @@
-Overkillographic.cpp
+overkillographic.cpp
 ![9 1MB](https://user-images.githubusercontent.com/75550631/228114557-75d1867a-eae0-45a6-885d-379e320eac5d.gif)
+
+<br>
+<br>
+
+### The first tab in your editor
+
+ref.cpp should be the first tab in your editor. It's a reference and a tool. Because you'll forget things.
+* Analyze files.
+* Raw file bytes.
+* Bytes table.
+* Specs of variables.
+* Useful commands, what they are, and how to use them.
+* Linux tools, what they are, and how to use them.
+* A place to keep your laptop setup info.
+* A place to keep your programming style info.
 
 <br>
 <br>
