@@ -9,7 +9,7 @@ overkillographic.cpp
 ref.cpp should be the first tab in your editor. It's a reference and a tool. Because you'll forget things.
 * Analyze files.
 * Raw file bytes.
-* Bytes table.
+* Table of bytes.
 * Specs of variables.
 * Useful commands, what they are, and how to use them.
 * Useful Linux tools, what they are, and how to use them.
