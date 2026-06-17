@@ -12,7 +12,8 @@ int main()
 	std::ofstream out_stream;
 	
 	//Gets path, fixes it if dropped.
-	std::cout << "\nDrop/enter file:\n"; std::string path; std::getline(std::cin, path); if(path[0] == '\0') {std::getline(std::cin, path);}
+	std::cout << "\nDrop/enter file:\n";
+	std::string path; std::getline(std::cin, path); if(path[0] == '\0') {std::getline(std::cin, path);}
 	if(path[0] == '\'') {path.erase(0, 1); path.pop_back(); path.pop_back();}
 	in_stream.open(path); if(!in_stream) {std::cout << "\nNo path " << path << "\n"; return 1;} in_stream.close();
 	
