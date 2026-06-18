@@ -7,6 +7,8 @@ overkillographic.cpp
 ### The first tab in your editor
 
 ref.cpp should be the first tab in your editor. It's a reference and a tool. Because you'll forget things.
+* C++ sample itself.
+* Drop/enter file.
 * Analyze files.
 * Raw file bytes.
 * Table of bytes.
