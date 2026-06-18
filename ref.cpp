@@ -420,10 +420,6 @@ CREATE FOLDER NO MATTER WHAT:   std::filesystem::create_directories("my_folder")
 
 DELETE FOLDER NO MATTER WHAT:   std::filesystem::remove_all("my_folder");                            Needs #include <filesystem>
 
-GET LIST OF FILES IN FOLDER:    system("ls -Av path/to/folder > my_list.txt");
-
-AS VARIABLE:                    string ls = "ls -Av "; ls += "path/to/folder"; ls += " > f"; system(ls.c_str());
-
 RUN ANOTHER C++ PROGRAM:        system("/home/user/Desktop/Authorship");   //The executable made by Geany or with the g++ command (both produce the same file.)
 
 TERMINAL OUTPUT TO FILE:        system("sha256sum my_file > hash_file");
@@ -440,9 +436,8 @@ and:                            cout.clear();                //Restores cout.
 CLEAR TERMINAL:                 std::cout << "\033[2J\033[3J\033[1;1H"; //Clears screen, erasing history.
 and:                            std::cout << "\033[2J\033[1;1H";        //Clears screen, keeping history.
 
-GET LIST OF FILES AND
-FOLDERS FROM A FOLDER
-without using system():
+GET LIST OF ALL FILES AND
+FOLDERS FROM A FOLDER:
 
 	//Needs:
 	//#include <algorithm>
