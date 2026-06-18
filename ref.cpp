@@ -2,6 +2,8 @@
 Occurrence, raw, text. This cpp contains resources;
 it should be the first tab in your editor. */
 
+#include <bitset>
+#include <filesystem>
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -17,36 +19,70 @@ int main()
 	if(path[0] == '\'') {path.erase(0, 1); path.pop_back(); path.pop_back();}
 	in_stream.open(path); if(!in_stream) {std::cout << "\nNo path " << path << "\n"; return 1;} in_stream.close();
 	
-	//Gets byte occurrence.
-	in_stream.open(path); in_stream.get(file_byte); long long byte_occur[256] = {0};
-	for(; !in_stream.eof(); in_stream.get(file_byte)) {raw_byte = file_byte; if(raw_byte < 0) {raw_byte += 256;} byte_occur[raw_byte]++;}
-	in_stream.close();
+	//Checks if file is empty.
+	unsigned long long size = std::filesystem::file_size(path);
+	if(size == 0) {std::cout << "\nEmpty file.\n";}
 	
 	//Gets bit occurrence.
-	long long bit_occur[2] = {0};
-	for(int a = 0; a < 256; a++)
-	{	raw_byte = a; bool binary[8] = {0}; int place = 128, zeros = 0, ones = 0;
-		for(int b = 0; b < 8; b++) {if(raw_byte >= place) {binary[b] = 1; raw_byte -= place;} place /= 2;}
-		for(int b = 0; b < 8; b++) {if(binary[b] == 0) {zeros++;} else {ones++;}}
-		if(byte_occur[a] > 0) {zeros *= byte_occur[a]; ones *= byte_occur[a]; bit_occur[0] += zeros; bit_occur[1] += ones;}
+	in_stream.open(path); if(!in_stream) {std::cout << "\nCan't open file for reading. (Bit occurrence).\n"; return 1;}
+	unsigned long long ones = 0, zeros = 0;
+	for(; in_stream.get(file_byte);)
+	{	std::bitset<8> bits(file_byte);
+		ones  +=   bits .count();
+		zeros += (~bits).count();
 	}
+	in_stream.close();
 	
-	//Creates file.
-	in_stream.open(path); out_stream.open("analysis"); in_stream.get(file_byte);
-	out_stream << path << "\n\noccurrence of bit 0: " << bit_occur[0] << "\n"; out_stream << "occurrence of bit 1: " << bit_occur[1] << "\n\n";
+	//Gets byte occurrence.
+	in_stream.open(path); if(!in_stream) {std::cout << "\nCan't open file for reading. (Byte occurrence).\n"; return 1;}
+	unsigned long long byte_occur[256] = {0};
+	for(; in_stream.get(file_byte);)
+	{	raw_byte = file_byte & 0xFF;
+		byte_occur[raw_byte]++;
+	}
+	in_stream.close();
+	
+	//Writes bit occurrence.
+	out_stream.open("analysis"); if(!out_stream) {std::cout << "\nCan't open file for writing. (Bit occurrence).\n"; return 1;}
+	out_stream << path << "\n\n"
+	           << "occurrence of bit 0: " << zeros << "\n"
+	           << "occurrence of bit 1: " << ones  << "\n";
+	out_stream.close();
+	
+	//Appends byte occurrence.
+	out_stream.open("analysis", std::ios::app); if(!out_stream) {std::cout << "\nCan't open file for writing. (Byte occurrence).\n"; return 1;}
+	out_stream << "\n";
 	for(int a = 0; a < 256; a++) {out_stream << "occurrence of byte " << a << ": " << byte_occur[a] << "\n";}
-	long long distinct = 0, total = 0; for(int a = 0; a < 256; a++) {if(byte_occur[a] != 0) {distinct++;} total += byte_occur[a];}
-	out_stream << "\n" << distinct << " distinct, " << total << " total" << "\n\nEvery byte raw:\n";
-	for(; !in_stream.eof(); in_stream.get(file_byte)) {raw_byte = file_byte; if(raw_byte < 0) {raw_byte += 256;} out_stream << raw_byte << "\n";}
-	in_stream.close(); out_stream.close();
+	out_stream.close();
 	
-	in_stream.open(path); out_stream.open("analysis", std::ios::app); in_stream.get(file_byte);
+	//Appends distinct and total.
+	out_stream.open("analysis", std::ios::app); if(!out_stream) {std::cout << "\nCan't open file for writing. (Distinct and total).\n"; return 1;}
+	long long distinct = 0, total = 0;
+	for(int a = 0; a < 256; a++)
+	{	if(byte_occur[a] != 0) {distinct++;}
+		total += byte_occur[a];
+	}
+	out_stream << "\n" << distinct << " distinct, " << total << " total" << "\n";
+	out_stream.close();
+	
+	//Appends every byte raw.
+	in_stream.open(path); if(!in_stream) {std::cout << "\nCan't open file for reading. (Every byte raw).\n"; return 1;}
+	out_stream.open("analysis", std::ios::app); if(!out_stream) {std::cout << "\nCan't open file for writing. (Every byte raw).\n"; return 1;}
+	out_stream << "\nEvery byte raw:\n";
+	for(; in_stream.get(file_byte);) {raw_byte = file_byte & 0xFF; out_stream << raw_byte << "\n";}
+	in_stream.close();
+	out_stream.close();
+	
+	//Appends only the 97 standard text bytes (9, 10, and 32-126).
+	in_stream.open(path); if(!in_stream) {std::cout << "\nCan't open file for reading. (Only the 97 standard text bytes).\n"; return 1;}
+	out_stream.open("analysis", std::ios::app); if(!out_stream) {std::cout << "\nCan't open file for writing. (Only the 97 standard text bytes).\n"; return 1;}
 	out_stream << "\nOnly the 97 standard text bytes (9, 10, and 32-126):\n";
-	for(; !in_stream.eof(); in_stream.get(file_byte))
+	for(; in_stream.get(file_byte);)
 	{	if      ((file_byte > 31) && (file_byte < 127)) {out_stream.put(file_byte);}
 		else if ((file_byte == 9) || (file_byte == 10)) {out_stream.put(file_byte);}
 	}
-	in_stream.close(); out_stream.close();
+	in_stream.close();
+	out_stream.close();
 }
 
 /*
@@ -62,16 +98,9 @@ int main()
 #####,.                                                                  .,#####
 ##########*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#########
 
-Type char takes file bytes as 256 values (-128 to 127.) Just do:
+CONVERT: int raw_byte = file_byte & 0xFF;             //raw_byte is now 0 to 255
 
-READ
-char file_byte;
-in_stream.get(file_byte);
-int raw_byte = file_byte;
-if(raw_byte < 0) {raw_byte += 256;}   //raw_byte is now 0 to 255 (256 values.)
-
-WRITE
-out_stream.put(raw_byte);
+WRITE: out_stream.put(raw_byte);
 
 
 
@@ -590,10 +619,10 @@ If Apple: cut speaker wires to eliminate chime ad, cut keyboard backlight cable,
 11. Type-casting: (type)var;
 12. Check failure for file i/o:
 
-in_stream.open("file_in"); if(!in_stream) {std::cout << "\nCan't open " << "file_in\n"; return 1;}
-out_stream.open("file_out"); if(!out_stream) {std::cout << "\nCan't open " << "file_out\n"; return 1;}
-for(; in_stream.get(file_byte);) {out_stream.put(file_byte);}
-or if(in_stream.get(file_byte)) {out_stream.put(file_byte);}
+in_stream.open("file"); if(!in_stream) {std::cout << "\nCan't open file for reading. (Say for what here).\n"; return 1;}
+out_stream.open("file"); if(!out_stream) {std::cout << "\nCan't open file for writing. (Say for what here).\n"; return 1;}
+for(; in_stream.get(file_byte);)
+or if(in_stream.get(file_byte)) {}
 in_stream.close();
 out_stream.close();
 
