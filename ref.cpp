@@ -57,7 +57,7 @@ int main()
 	
 	//Appends distinct and total.
 	out_stream.open("analysis", std::ios::app); if(!out_stream) {std::cout << "\nCan't open file for writing. (Distinct and total).\n"; return 1;}
-	long long distinct = 0, total = 0;
+	unsigned long long distinct = 0, total = 0;
 	for(int a = 0; a < 256; a++)
 	{	if(byte_occur[a] != 0) {distinct++;}
 		total += byte_occur[a];
