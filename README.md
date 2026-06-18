@@ -7,7 +7,7 @@ overkillographic.cpp
 ### ref.cpp should be the first tab in your editor
 
 * The C++ itself is your reference for writing new code that's at least as safe, future-proof, and minimalist.
-* The C++ has a "Gets path" block you can use everywhere for entering paths or drag-n-dropping files & folders.
+* The C++ has a "Gets path" block you can use anywhere for entering paths or drag-n-dropping files & folders.
 * The C++ is a tool: "Creates a minimalist analysis file about your file. Occurrence, distinct, raw, and text."
 * The comments contain "Raw file bytes" - how to deal with file bytes as 0 to 255.
 * The comments contain "Table of bytes" - see what each byte is, its binary digits, hex digits, & more.
