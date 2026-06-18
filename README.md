@@ -8,7 +8,7 @@ overkillographic.cpp
 
 * The C++ itself is your reference for writing new code that's at least as safe, future-proof, and minimalist.
 * The C++ has a "Gets path" block you can use everywhere for entering paths or drag-n-dropping files & folders.
-* The C++ is a tool for file analysis: create a minimalist analysis file about your file: occurrence, raw, text.
+* The C++ is a tool: "Creates a minimalist analysis file about your file. Occurrence, distinct, raw, and text."
 * The comments contain "Raw file bytes" - how to deal with file bytes as 0 to 255.
 * The comments contain "Table of bytes" - see what each byte is, its binary digits, hex digits, & more.
 * The comments contain "Specs of variables" - see minimum & maximum values of int, long long, & more.

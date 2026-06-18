@@ -1,6 +1,6 @@
 /*Creates a minimalist analysis file about your file.                           Run it: "apt install g++ geany". Open the .cpp in Geany. Hit F9 once. F5 to run.
-Occurrence, raw, text. This cpp contains resources;
-it should be the first tab in your editor. */
+Occurrence, distinct, raw, and text. This cpp contains
+resources; it should be the first tab in your editor.*/
 
 #include <bitset>
 #include <filesystem>
