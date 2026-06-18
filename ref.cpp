@@ -21,7 +21,7 @@ int main()
 	
 	//Checks if file is empty.
 	unsigned long long size = std::filesystem::file_size(path);
-	if(size == 0) {std::cout << "\nEmpty file.\n";}
+	if(size == 0) {std::cout << "\nEmpty file.\n"; return 0;}
 	
 	//Gets bit occurrence.
 	in_stream.open(path); if(!in_stream) {std::cout << "\nCan't open file for reading. (Bit occurrence).\n"; return 1;}
