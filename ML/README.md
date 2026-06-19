@@ -1,4 +1,6 @@
-Run it: ```apt install geany python3-torch```. Open the .py in Geany.<br>
+### Run it
+
+```apt install geany python3-torch```. Open the .py in Geany.<br>
 Replace ```python``` with ```python3``` in Geany's execute command. F5 to run.
 
 <br>
