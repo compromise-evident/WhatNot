@@ -16,16 +16,6 @@ overkillographic.cpp
 * The comments contain **Laptop setup** - a place to keep your laptop setup info.
 * The comments contain **Programming style** - a place to keep your programming style info.
 
-See, your programming style keeps evolving. It doesn't stop, no matter how
-confident you think you are that it's your best and last. And because it keeps
-evolving, it bothers you that your old code doesn't match your current style.
-This
-makes you want to rush and refactor everything all at once, then again, and
-again, as your style evolves. Instead, keep updating your copy of ref.cpp with
-your current style, and refactor less often, because you have this one file that
-holds everything you need. And it'll be there when your have the time and energy
-to refactor one thing at a time.
-
 <br>
 
 ### Photo of a suspicious screenshot
