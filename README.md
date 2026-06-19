@@ -16,12 +16,15 @@ overkillographic.cpp
 * The comments contain **Laptop setup** - a place to keep your laptop setup info.
 * The comments contain **Programming style** - a place to keep your programming style info.
 
-ref.cpp will keep you from going insane.
-See, your programming style keeps evolving. And there's a real danger of
-becoming consumed by continuously refactoring all your old code so that it
-matches your current style (which keeps evolving). To lessen this burden,
-ref.cpp is your promise that ok, from now on, you'll write code like in ref.cpp,
-a file you edit over time as your programming style evolves.
+See, your programming style keeps evolving. It doesn't stop, no matter how
+confident you think you are that it's your best and last. And because it keeps
+evolving, it bothers you that your old code doesn't match your current style.
+This
+makes you want to rush and refactor everything all at once, then again, and
+again, as your style evolves. Instead, keep updating your copy of ref.cpp with
+your current style, and refactor less often, because you have this one file that
+holds everything you need. And it'll be there when your have the time and energy
+to refactor one thing at a time.
 
 <br>
 
