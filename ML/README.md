@@ -42,6 +42,8 @@ Option: |
 
 ```
 
+First verify that your model can generalize on the given training-data by
+scoring well. Then replace the data with your own.
 The given training-data is a text version of MNIST, with labels & data combined like above.
 **train.txt** contains 60,000 labeled images of handwritten digits
 (one label & image per line of text.) An image becomes legible if you arrange

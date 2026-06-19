@@ -11,9 +11,6 @@ retrain =    1 # Number of times to train on entire train.txt. It's best to incr
 
 
 
-# ML ready to use. Verify that your model can generalize on the given training-data by
-# scoring well. Then replace the data with your own (label & string per line in text file.)
-
 import torch, torch.nn as nn, torch.optim as optim
 
 print("\n(1) Model   (Create a new model and save it as one file.)")
