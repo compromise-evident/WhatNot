@@ -2,7 +2,6 @@ overkillographic.cpp
 ![9 1MB](https://user-images.githubusercontent.com/75550631/228114557-75d1867a-eae0-45a6-885d-379e320eac5d.gif)
 
 <br>
-<br>
 
 ### ref.cpp should be the first tab in your editor
 
@@ -27,14 +26,12 @@ ref.cpp is your promise that ok, from now on, you'll write code like in ref.cpp,
 a file you edit over time as your programming style evolves.
 
 <br>
-<br>
 
 ### Photo of a suspicious screenshot
 <p align="center">
   <img src="docs/suspicious_screenshot.png">
 </p>
 
-<br>
 <br>
 
 ### Copyright & licenses
@@ -55,7 +52,6 @@ without the fear of being forever chained to a human and
 its words, words enforced by handcuffs and prison time.
 
 <br>
-<br>
 
 ### Clean Room Reverse Engineering (CRRE)
 
@@ -67,7 +63,6 @@ Let's say you built something and it has a restrictive license, but someone want
 * And most importantly, you can't sue person B for having a copy of THEIR own code.
 * Unless patents, person B created a functionally identical, unrestricted version for all to enjoy.
 
-<br>
 <br>
 
 ### Two is one, and one is none

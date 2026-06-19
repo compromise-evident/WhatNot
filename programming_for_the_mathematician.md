@@ -1,4 +1,4 @@
-# The shortest C++ intro right in the README
+### The shortest C++ intro right in the README
 
 * ```apt install g++ geany```
 * Copy the following using the copy button.
@@ -24,9 +24,8 @@ int main()
 ```
 
 <br>
-<br>
 
-# 1. Variables
+### 1. Variables
 
 Replace all your code with:
 
@@ -122,9 +121,8 @@ int main()
 ```
 
 <br>
-<br>
 
-# 2. Loops
+### 2. Loops
 
 Replace all your code with:
 
@@ -181,9 +179,8 @@ int main()
 ```
 
 <br>
-<br>
 
-# 3. Arrays
+### 3. Arrays
 
 Replace all your code with:
 
