@@ -1,4 +1,4 @@
-//YOUR CONTROLS:                                                                                              Run it: "apt install g++ geany". Open this in Geany. Hit F9 once. F5 to run.
+//YOUR CONTROLS:                                                                                              Run it: "apt install g++ geany". Open the .cpp in Geany. Hit F9 once. F5 to run.
 long long last_few_digits_of_your_semiprime = 423446789115381147; //Must end in 1, 3, 7, or 9.
 long long number_of_ending_digits_to_crack = 4; //Begin at 1 and increase!
 
