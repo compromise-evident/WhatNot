@@ -16,7 +16,7 @@ Option: |
 
 <br>
 
-## Replace the given training-data (train.txt & test.txt)
+### Replace the given training-data (train.txt & test.txt)
 
 ```text
 
@@ -64,7 +64,6 @@ Each line in train.txt & test.txt: ```label```, ```space```, ```- and @```, ```n
 Each line in cognize.txt: ```- and @```, ```new line``` (\n.)
 (You have to create cognize.txt. Just copy data strings from test.txt.)
 
-<br>
 <br>
 
 ### The given training-data stacked 28x28 (visual_for_you.txt)
