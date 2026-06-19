@@ -1,6 +1,8 @@
-//YOUR CONTROLS:                                                                Run it: "apt install g++ geany". Open this in Geany. Hit F9 once. F5 to run.
+//YOUR CONTROLS:                                                                Run it: "apt install g++ geany". Open the .cpp in Geany. Hit F9 once. F5 to run.
 long long  width = 500; //image  width in pixels
 long long height = 500; //image height in pixels
+
+
 
 /*Creates a 122-byte TIFF header file,
 to which you may append 3 bytes per pixel:
