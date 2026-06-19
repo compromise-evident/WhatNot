@@ -16,9 +16,7 @@ overkillographic.cpp
 * The comments contain **Laptop setup** - a place to keep your laptop setup info.
 * The comments contain **Programming style** - a place to keep your programming style info.
 
-ref.cpp will keep you from going insane. Physical security means guaranteed
-shelter, medicine, and sustenance. That's exactly what this file offers, but
-for the brain.
+ref.cpp will keep you from going insane.
 See, your programming style keeps evolving. And there's a real danger of
 becoming consumed by continuously refactoring all your old code so that it
 matches your current style (which keeps evolving). To lessen this burden,
