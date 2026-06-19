@@ -1,7 +1,9 @@
-//YOUR CONTROLS:                                                                //Run it: "apt install g++ geany". Open this in Geany. Hit F9 once. F5 to run.
+//YOUR CONTROLS:                                                                Run it: "apt install g++ geany". Open the .cpp in Geany. Hit F9 once. F5 to run.
 unsigned long long    dividend = 1000000000000000000;
 unsigned long long max_divisor = 100000000;
 unsigned long long    quantity = 100000;
+
+
 
 #include <iostream>
 using namespace std;
