@@ -629,6 +629,7 @@ in_stream.open("file"); if(!in_stream) {std::cout << "\nCan't open file for read
 out_stream.open("file"); if(!out_stream) {std::cout << "\nCan't open file for writing. (Say for what here).\n"; return 1;}
 for(; in_stream.get(file_byte);)
 or if(in_stream.get(file_byte)) {}
+or if(!in_stream.get(file_byte)) {return 0;}
 in_stream.close();
 out_stream.close();
 
