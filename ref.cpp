@@ -477,7 +477,7 @@ FOLDERS FROM A FOLDER:
 	
 	std::string path = "path_to_folder";
 	
-	//Gets list of files & folders from a folder.
+	//Gets list of ALL files & folders from a folder.
 	std::vector <std::string>   file_list;
 	std::vector <std::string> folder_list;
 	for(const auto& entry : std::filesystem::recursive_directory_iterator(path))
@@ -486,8 +486,14 @@ FOLDERS FROM A FOLDER:
 	}
 	std::sort(  file_list.begin(),   file_list.end()); //Sorts list of   files in RAM.
 	std::sort(folder_list.begin(), folder_list.end()); //Sorts list of folders in RAM.
-	out_stream.open("list_of_files"  ); for(const auto& file_path : file_list  ) {out_stream << file_path << "\n";} out_stream.close(); //Writes list of files.
-	out_stream.open("list_of_folders"); for(const auto& file_path : folder_list) {out_stream << file_path << "\n";} out_stream.close(); //Writes list of folders.
+	
+	out_stream.open("list_of_files"); if(!out_stream) {std::cout << "\nCan't open file for writing. (Writes list of files).\n"; return 1;} //Writes list of files.
+	for(const auto& file_path : file_list) {out_stream << file_path << "\n";}
+	out_stream.close();
+	
+	out_stream.open("list_of_folders"); if(!out_stream) {std::cout << "\nCan't open file for writing. (Writes list of folders).\n"; return 1;} //Writes list of folders.
+	for(const auto& file_path : folder_list) {out_stream << file_path << "\n";}
+	out_stream.close();
 
 
 
