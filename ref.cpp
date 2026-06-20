@@ -40,26 +40,12 @@ int main()
 		zeros += ((~bits).count() * byte_occur[a]);
 	}
 	
-	//Writes bit occurrence.
+	//Creates file.
 	out_stream.open("analysis"); if(!out_stream) {std::cout << "\nCan't open file for writing. (Bit occurrence).\n"; return 1;}
-	out_stream << path << "\n\n"
-	           << "occurrence of bit 0: " << zeros << "\n"
-	           << "occurrence of bit 1: " << ones  << "\n";
-	out_stream.close();
-	
-	//Appends byte occurrence.
-	out_stream.open("analysis", std::ios::app); if(!out_stream) {std::cout << "\nCan't open file for writing. (Byte occurrence).\n"; return 1;}
-	out_stream << "\n";
-	for(int a = 0; a < 256; a++) {out_stream << "occurrence of byte " << a << ": " << byte_occur[a] << "\n";}
-	out_stream.close();
-	
-	//Appends distinct and total.
-	out_stream.open("analysis", std::ios::app); if(!out_stream) {std::cout << "\nCan't open file for writing. (Distinct and total).\n"; return 1;}
-	unsigned long long distinct = 0, total = 0;
-	for(int a = 0; a < 256; a++)
-	{	if(byte_occur[a] != 0) {distinct++;}
-		total += byte_occur[a];
-	}
+	out_stream << path << "\n\noccurrence of bit 0: " << zeros << "\noccurrence of bit 1: " << ones  << "\n\n"; //Writes bit occurrence.
+	for(int a = 0; a < 256; a++) {out_stream << "occurrence of byte " << a << ": " << byte_occur[a] << "\n";}   //Writes byte occurrence.
+	unsigned long long distinct = 0, total = 0;                                                                 //Writes distinct, total.
+	for(int a = 0; a < 256; a++) {if(byte_occur[a] != 0) {distinct++;} total += byte_occur[a];}
 	out_stream << "\n" << distinct << " distinct, " << total << " total" << "\n";
 	out_stream.close();
 	
