@@ -23,16 +23,6 @@ int main()
 	unsigned long long size = std::filesystem::file_size(path);
 	if(size == 0) {std::cout << "\nEmpty file.\n"; return 0;}
 	
-	//Gets bit occurrence.
-	in_stream.open(path); if(!in_stream) {std::cout << "\nCan't open file for reading. (Bit occurrence).\n"; return 1;}
-	unsigned long long ones = 0, zeros = 0;
-	for(; in_stream.get(file_byte);)
-	{	std::bitset<8> bits(file_byte);
-		ones  +=   bits .count();
-		zeros += (~bits).count();
-	}
-	in_stream.close();
-	
 	//Gets byte occurrence.
 	in_stream.open(path); if(!in_stream) {std::cout << "\nCan't open file for reading. (Byte occurrence).\n"; return 1;}
 	unsigned long long byte_occur[256] = {0};
@@ -41,6 +31,14 @@ int main()
 		byte_occur[raw_byte]++;
 	}
 	in_stream.close();
+	
+	//Gets bit occurrence (from byte occurrence).
+	unsigned long long ones = 0, zeros = 0;
+	for(int a = 0; a < 256; a++)
+	{	std::bitset<8> bits(a);
+		ones  += (  bits. count() * byte_occur[a]);
+		zeros += ((~bits).count() * byte_occur[a]);
+	}
 	
 	//Writes bit occurrence.
 	out_stream.open("analysis"); if(!out_stream) {std::cout << "\nCan't open file for writing. (Bit occurrence).\n"; return 1;}
