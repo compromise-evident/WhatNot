@@ -425,29 +425,29 @@ ________________________________________________________________________________
 #####,.                                                                  .,#####
 ##########*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#########
 
-SEARCH A FOLDER:                grep -rlF 'the word' /path
+SEARCH A FOLDER:                       grep -rlF 'the word' /path
 
-GET FILE SIZE IN BYTES:         unsigned long long size = std::filesystem::file_size(path);          Needs #include <filesystem>
+GET FILE SIZE IN BYTES:                unsigned long long size = std::filesystem::file_size(path);          Needs #include <filesystem>
 
-CREATE FOLDER NO MATTER WHAT:   std::filesystem::create_directories("my_folder");                    Needs #include <filesystem>
+CREATE FOLDER NO MATTER WHAT:          std::filesystem::create_directories("my_folder");                    Needs #include <filesystem>
 
-DELETE FOLDER NO MATTER WHAT:   std::filesystem::remove_all("my_folder");                            Needs #include <filesystem>
+DELETE FOLDER / FILE NO MATTER WHAT:   std::filesystem::remove_all("my_folder_or_file");                    Needs #include <filesystem>
 
-RUN ANOTHER C++ PROGRAM:        system("/home/user/Desktop/Authorship");   //The executable made by Geany or with the g++ command (both produce the same file.)
+RUN ANOTHER C++ PROGRAM:               system("/home/user/Desktop/Authorship");   //The executable made by Geany or with the g++ command (both produce the same file.)
 
-TERMINAL OUTPUT TO FILE:        system("sha256sum my_file > hash_file");
+TERMINAL OUTPUT TO FILE:               system("sha256sum my_file > hash_file");
 
-CHANGE WORKING DIR:             chdir("/home/user/Desktop/my_folder");          Needs #include <unistd.h>
+CHANGE WORKING DIR:                    chdir("/home/user/Desktop/my_folder");          Needs #include <unistd.h>
 
-APPEND TO FILE:                 out_stream.open(path, std::ios::app);
+APPEND TO FILE:                        out_stream.open(path, std::ios::app);
 
-DO NOT OPTIMIZE VARIABLE:       volatile int a;
+DO NOT OPTIMIZE VARIABLE:              volatile int a;
 
-INVISIBLE WHILE TYPING:         cout.setstate(ios::failbit); //Disables cout.
-and:                            cout.clear();                //Restores cout.
+INVISIBLE WHILE TYPING:                cout.setstate(ios::failbit); //Disables cout.
+and:                                   cout.clear();                //Restores cout.
 
-CLEAR TERMINAL:                 std::cout << "\033[2J\033[3J\033[1;1H"; //Clears screen, erasing history.
-and:                            std::cout << "\033[2J\033[1;1H";        //Clears screen, keeping history.
+CLEAR TERMINAL:                        std::cout << "\033[2J\033[3J\033[1;1H"; //Clears screen, erasing history.
+and:                                   std::cout << "\033[2J\033[1;1H";        //Clears screen, keeping history.
 
 GET LIST OF ALL FILES AND
 FOLDERS FROM A FOLDER:
