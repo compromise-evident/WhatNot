@@ -13,7 +13,7 @@ int main()
 	std::ifstream in_stream;
 	std::ofstream out_stream;
 	
-	//Gets path (files & folders).
+	//Gets path.
 	std::cout << "\nDrop/enter file:\n";
 	std::string path; std::getline(std::cin, path); if(path[0] == '\0') {std::getline(std::cin, path);}
 	if(path[0] == '\'') {path.erase(0, 1); path.pop_back(); path.pop_back();} //Fixes path if drag-n-dropped.
