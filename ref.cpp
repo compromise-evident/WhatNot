@@ -472,11 +472,11 @@ FOLDERS FROM A FOLDER:
 	std::sort(folder_list.begin(), folder_list.end()); //Sorts list of folders in RAM.
 	
 	out_stream.open("list_of_files"); if(!out_stream) {std::cout << "\nCan't open file for writing. (Writes list of files).\n"; return 1;} //Writes list of files.
-	for(const auto& file_path : file_list) {out_stream << file_path << "\n";}
+	for(unsigned long long a = 0; a < file_list.size(); a++) {out_stream << file_list[a] << "\n";}
 	out_stream.close();
 	
 	out_stream.open("list_of_folders"); if(!out_stream) {std::cout << "\nCan't open file for writing. (Writes list of folders).\n"; return 1;} //Writes list of folders.
-	for(const auto& file_path : folder_list) {out_stream << file_path << "\n";}
+	for(unsigned long long a = 0; a < folder_list.size(); a++) {out_stream << folder_list[a] << "\n";}
 	out_stream.close();
 
 
