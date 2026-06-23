@@ -82,9 +82,9 @@ int main()
 #####,.                                                                  .,#####
 ##########*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#########
 
-CONVERT: int raw_byte = file_byte & 0xFF;             //raw_byte is now 0 to 255
+int raw_byte = file_byte & 0xFF; //0 to 255.
 
-WRITE: out_stream.put(raw_byte);
+out_stream.put(raw_byte);
 
 
 
