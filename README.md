@@ -62,11 +62,8 @@ Let's say you built something and it has a restrictive license, but someone want
 
 ### Two is one, and one is none
 
-I have 9 USB sticks held together by one of those rock-climbing things you're
-not supposed to climb with. Each stick has its purpose. But 2 of them serve as
-backups where I keep saving all my stuff.
+I have 2 USB sticks that serve as backups where I keep saving all my stuff.
 They're identical. What I do to 1, I do to the other. See, if I had only one,
 and it dies, then I have none. But I have 2. Now if 1 dies, I still have 1,
-rather than none.
-Create folders like 2026_06_25 and save your stuff in there for that day so you
-can retain the stuff before that too, like 2026_06_20.
+rather than none. And I save stuff in folders with names like 2026_06_25
+so that the folders will be sorted correctly.
