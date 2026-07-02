@@ -17,11 +17,10 @@ int main()
 	std::cout << "\nDrop/enter file:\n";
 	std::string path; std::getline(std::cin, path); if(path[0] == '\0') {std::getline(std::cin, path);}
 	if(path[0] == '\'') {path.erase(0, 1); path.pop_back(); path.pop_back();} //Fixes path if drag-n-dropped.
-	in_stream.open(path); if(!in_stream) {std::cout << "\nNo path " << path << "\n"; return 1;} in_stream.close();
+	if(!std::filesystem::exists(path)) {std::cout << "\nNo path " << path << "\n"; return 1;}
 	
 	//Checks if file is empty.
-	long long size = std::filesystem::file_size(path);
-	if(size == 0) {std::cout << "\nEmpty file.\n"; return 0;}
+	if(std::filesystem::file_size(path) == 0) {std::cout << "\nEmpty file.\n"; return 0;}
 	
 	//Gets byte occurrence.
 	in_stream.open(path); if(!in_stream) {std::cout << "\nCan't open file for reading. (Gets byte occurrence).\n"; return 1;}
